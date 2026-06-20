@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bone: #ebe6d4;
+  --ink: #0a0a0a;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis handles smoothing */
+}
+
+body {
+  background-color: var(--bone);
+  color: var(--ink);
+  font-feature-settings: "ss01", "cv01";
+}
+
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Selection */
+::selection {
+  background: var(--ink);
+  color: var(--bone);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #dbd4bd;
+}
+::-webkit-scrollbar-thumb {
+  background: #0a0a0a;
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-site px-6 md:px-10;
+  }
+  .eyebrow {
+    @apply text-[11px] font-sans font-medium uppercase tracking-eyebrow;
+  }
+  /* Underline that wipes in on hover */
+  .link-wipe {
+    position: relative;
+  }
+  .link-wipe::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-wipe:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium transition-all duration-500 ease-smooth;
+  }
+  .btn-dark {
+    @apply btn bg-ink text-bone hover:bg-ink-warm;
+  }
+  .btn-light {
+    @apply btn bg-bone text-ink hover:bg-bone-dark;
+  }
+  .btn-outline {
+    @apply btn border border-ink/30 text-ink hover:border-ink hover:bg-ink hover:text-bone;
+  }
+}
+
+/* Display headline kerning */
+.font-display {
+  letter-spacing: -0.01em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
