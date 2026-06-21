@@ -1,7 +1,6 @@
-import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const PHONE = "2349037555786"; // hello@citymorehomes.com WhatsApp number
 
 export async function POST(request) {
   const { name, email, phone, interest, message } = await request.json();
@@ -10,24 +9,23 @@ export async function POST(request) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
 
-  const { error } = await resend.emails.send({
-    from: "Citymore Homes Contact <onboarding@resend.dev>",
-    to: "hello@citymorehomes.com",
-    replyTo: email,
-    subject: `New enquiry — ${interest}`,
-    text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "—"}\nInterest: ${interest}\n\n${message}`,
-    html: `
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone || "—"}</p>
-      <p><strong>Interest:</strong> ${interest}</p>
-      <hr />
-      <p>${message.replace(/\n/g, "<br>")}</p>
-    `,
-  });
+  const text = [
+    `*New Enquiry — ${interest}*`,
+    ``,
+    `*Name:* ${name}`,
+    `*Email:* ${email}`,
+    `*Phone:* ${phone || "—"}`,
+    ``,
+    `*Message:*`,
+    message,
+  ].join("\n");
 
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  const url = `https://api.callmebot.com/whatsapp.php?phone=${PHONE}&text=${encodeURIComponent(text)}&apikey=${process.env.CALLMEBOT_API_KEY}`;
+
+  const res = await fetch(url);
+
+  if (!res.ok) {
+    return NextResponse.json({ error: "Failed to send WhatsApp message" }, { status: 500 });
   }
 
   return NextResponse.json({ ok: true });
