@@ -17,6 +17,11 @@ export default function Footer() {
               className="mb-6 h-16 w-44"
               strokeWidth={2.4}
             />
+            <Roofline
+              color="#EBE6D4"
+              className="mb-6 h-16 w-44"
+              strokeWidth={2.4}
+            />
             <Image
               src="/citymore-logo-light.png"
               alt="CITYMORE HOMES LIMITED"
@@ -26,7 +31,8 @@ export default function Footer() {
             />
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-taupe">
               A real estate company built on trust, taste, and a deep respect
-              for the places people call home.
+              for the places people call home. A real estate company built on
+              trust, taste, and a deep respect for the places people call home.
             </p>
           </div>
 
@@ -62,8 +68,11 @@ export default function Footer() {
               </li>
               <li className="inline-flex items-center gap-2 text-taupe">
                 <Phone size={15} /> +234 903 755 5786
+                <Phone size={15} /> +234 903 755 5786
               </li>
               <li className="inline-flex items-start gap-2 text-taupe">
+                <MapPin size={15} className="mt-0.5" /> Victoria Island, Lagos,
+                Nigeria
                 <MapPin size={15} className="mt-0.5" /> Ogba, Lagos, Nigeria
               </li>
             </ul>
@@ -81,6 +90,9 @@ export default function Footer() {
           <p className="font-sans uppercase tracking-eyebrow">
             Refined living, realised
           </p>
+          <p className="font-sans uppercase tracking-eyebrow">
+            Refined living, realised
+          </p>
         </div>
       </div>
     </footer>
@@ -94,6 +106,10 @@ function FooterCol({ title, items }) {
       <ul className="mt-5 space-y-3 text-sm">
         {items.map(([label, href]) => (
           <li key={label}>
+            <Link
+              href={href}
+              className="link-wipe text-bone/80 hover:text-bone"
+            >
             <Link
               href={href}
               className="link-wipe text-bone/80 hover:text-bone"

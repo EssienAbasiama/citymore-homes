@@ -17,8 +17,11 @@ export default function ContactPage() {
     message: "",
   });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [serverError, setServerError] = useState("");
   const [errors, setErrors] = useState({});
 
+  const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
   const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
   const validate = () => {
@@ -31,7 +34,7 @@ export default function ContactPage() {
     return Object.keys(err).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
     // Front-end demo: open the user's mail client pre-filled to hello@citymorehomes.com
@@ -41,6 +44,27 @@ export default function ContactPage() {
     );
     window.location.href = `mailto:hello@citymorehomes.com?subject=${subject}&body=${body}`;
     setSent(true);
+    setSending(true);
+    setServerError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        setServerError(data.error || "Something went wrong. Please try again.");
+      } else {
+        setSent(true);
+      }
+    } catch {
+      setServerError(
+        "Network error. Please check your connection and try again.",
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -72,8 +96,8 @@ export default function ContactPage() {
               <ContactRow
                 icon={Phone}
                 label="Phone"
-                value="+234 800 000 0000"
-                href="tel:+2348000000000"
+                value="+234 903 755 5786"
+                href="tel:+2349037555786"
               />
               <ContactRow
                 icon={MapPin}
@@ -117,6 +141,11 @@ export default function ContactPage() {
                         stiffness: 260,
                         damping: 18,
                       }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 18,
+                      }}
                       className="flex h-16 w-16 items-center justify-center rounded-full bg-ink text-bone"
                     >
                       <Check size={28} />
@@ -124,10 +153,16 @@ export default function ContactPage() {
                     <h3 className="mt-6 font-display text-3xl">
                       Message ready
                     </h3>
+                    <h3 className="mt-6 font-display text-3xl">
+                      Message sent!
+                    </h3>
                     <p className="mt-3 max-w-sm text-ink/60">
                       Your email to <strong>hello@citymorehomes.com</strong> is
                       opening now. If nothing happened, email us directly —
                       we'll be in touch within one working day.
+                      Your message has been sent to{" "}
+                      <strong>hello@citymorehomes.com</strong>. We'll be in
+                      touch within one working day.
                     </p>
                     <button
                       onClick={() => setSent(false)}
@@ -181,11 +216,17 @@ export default function ContactPage() {
                       <label className="eyebrow text-taupe-dark">
                         I'm interested in
                       </label>
+                      <label className="eyebrow text-taupe-dark">
+                        I'm interested in
+                      </label>
                       <div className="mt-3 flex flex-wrap gap-2">
                         {interests.map((it) => (
                           <button
                             type="button"
                             key={it}
+                            onClick={() =>
+                              setForm((f) => ({ ...f, interest: it }))
+                            }
                             onClick={() =>
                               setForm((f) => ({ ...f, interest: it }))
                             }
@@ -211,12 +252,22 @@ export default function ContactPage() {
                       />
                     </Field>
 
-                    <button type="submit" className="btn-dark group w-full">
-                      Send message
-                      <ArrowRight
-                        size={18}
-                        className="transition-transform duration-300 group-hover:translate-x-1"
-                      />
+                    {serverError && (
+                      <p className="text-sm text-red-700">{serverError}</p>
+                    )}
+
+                    <button
+                      type="submit"
+                      disabled={sending}
+                      className="btn-dark group w-full disabled:opacity-60"
+                    >
+                      {sending ? "Sending…" : "Send message"}
+                      {!sending && (
+                        <ArrowRight
+                          size={18}
+                          className="transition-transform duration-300 group-hover:translate-x-1"
+                        />
+                      )}
                     </button>
                   </motion.form>
                 )}
@@ -269,6 +320,9 @@ function ContactRow({ icon: Icon, label, value, href }) {
         <p className="text-xs uppercase tracking-eyebrow text-taupe-dark">
           {label}
         </p>
+        <p className="text-xs uppercase tracking-eyebrow text-taupe-dark">
+          {label}
+        </p>
         <p className="mt-1 text-ink/85">{value}</p>
       </div>
     </div>
@@ -276,6 +330,10 @@ function ContactRow({ icon: Icon, label, value, href }) {
   return (
     <li>
       {href ? (
+        <a
+          href={href}
+          className="group block transition-opacity hover:opacity-70"
+        >
         <a
           href={href}
           className="group block transition-opacity hover:opacity-70"
