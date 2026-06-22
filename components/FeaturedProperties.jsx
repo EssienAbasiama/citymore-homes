@@ -13,11 +13,11 @@ export default function FeaturedProperties() {
       <div className="container-site">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <Reveal className="eyebrow text-taupe-dark">Selected listings</Reveal>
+            <Reveal className="eyebrow text-taupe-dark">Featured projects</Reveal>
             <h2 className="mt-4 font-display text-4xl leading-tight md:text-6xl">
-              <RevealText text="Homes worth" />
+              <RevealText text="Homes we've" />
               <br />
-              <RevealText text="the journey." delay={0.15} />
+              <RevealText text="transformed." delay={0.15} />
             </h2>
           </div>
           <Reveal delay={0.2}>

@@ -8,19 +8,19 @@ import { Reveal } from "./Motion";
 const testimonials = [
   {
     quote:
-      "They found us a home we didn't know existed, in a neighbourhood we'd written off. Three years on, it still feels like the right call.",
+      "We walked into a finished home that felt considered in every corner. You could tell it was built by people who cared — not flipped for a quick sale.",
     name: "Adaeze & Tunde O.",
-    role: "Bought in Ikoyi",
+    role: "Bought a CITYMORE home, Ikoyi",
   },
   {
     quote:
-      "The most calm, organised property experience I've had. Every question answered before I thought to ask it.",
+      "They took a tired property I'd nearly given up on and managed the whole development — design, build, the lot. I just watched it come back to life.",
     name: "Margaret E.",
-    role: "Sold a family home",
+    role: "Development advisory client",
   },
   {
     quote:
-      "CITYMORE manages two of my rentals. I genuinely forget I own them — which is the highest compliment I can give.",
+      "I've co-funded two projects with CITYMORE. The underwriting was honest, the updates were regular, and the returns landed exactly where they said they would.",
     name: "Daniel A.",
     role: "Investor, Lagos",
   },

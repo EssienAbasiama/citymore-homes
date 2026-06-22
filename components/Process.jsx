@@ -5,23 +5,23 @@ import { Reveal, RevealText } from "./Motion";
 const steps = [
   {
     n: "01",
-    title: "Conversation",
-    body: "We start by understanding how you live — the light, the neighbourhood, the rhythm of your days.",
+    title: "Acquisition",
+    body: "We source undervalued or overlooked properties in the right locations, with a clear view of what each one can become.",
   },
   {
     n: "02",
-    title: "Curation",
-    body: "You receive a short, considered shortlist. No noise, no endless scrolling — only homes that fit.",
+    title: "Design",
+    body: "Architects and designers reimagine the space — layout, light, and finish — into a home worth living in.",
   },
   {
     n: "03",
-    title: "Viewing",
-    body: "Private, unhurried viewings arranged around your schedule, with honest counsel at every step.",
+    title: "Transformation",
+    body: "Our build team executes the renovation to a high standard, managed closely from strip-out to snagging.",
   },
   {
     n: "04",
-    title: "Completion",
-    body: "We manage negotiation, paperwork, and handover — then stay on call long after move-in.",
+    title: "Delivery",
+    body: "We bring the finished home to market — or hand it back to its owner — then stay on call long after.",
   },
 ];
 

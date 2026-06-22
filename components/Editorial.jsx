@@ -8,16 +8,16 @@ import Roofline from "./Roofline";
 
 const values = [
   {
-    title: "Discretion",
-    body: "Quiet, considered representation for clients who value privacy as much as the deal.",
+    title: "Vision",
+    body: "We see what a tired or overlooked property could become — and we have the team to make it real.",
   },
   {
-    title: "Taste",
-    body: "A curated portfolio — we only list homes we would happily live in ourselves.",
+    title: "Craft",
+    body: "Every renovation is detailed to a standard we would happily live with ourselves.",
   },
   {
-    title: "Stewardship",
-    body: "We look after a property long after the keys change hands, not just until they do.",
+    title: "Partnership",
+    body: "We build alongside investors and owners, sharing the risk, the reward, and the judgement.",
   },
 ];
 
@@ -49,15 +49,16 @@ export default function Editorial() {
             <Roofline color="#EBE6D4" className="mb-8 h-14 w-40" strokeWidth={2} />
             <Reveal className="eyebrow text-taupe">Who we are</Reveal>
             <h2 className="mt-5 font-display text-4xl leading-[1.05] md:text-5xl">
-              <RevealText text="A real estate practice," />
+              <RevealText text="A development studio," />
               <br />
               <RevealText text="not a sales floor." delay={0.15} />
             </h2>
             <Reveal delay={0.2}>
               <p className="mt-7 max-w-lg text-lg leading-relaxed text-bone/70">
                 CITYMORE HOMES LIMITED was founded on a simple belief: a home is the most
-                personal thing most people will ever buy, and it deserves to be handled
-                with care. We pair sharp market judgement with genuine attention.
+                personal thing most people will ever buy, and it deserves to be built
+                with care. We acquire properties with sharp market judgement and
+                transform them with genuine attention to detail.
               </p>
             </Reveal>
 

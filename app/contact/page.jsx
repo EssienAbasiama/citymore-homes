@@ -6,14 +6,20 @@ import { Mail, Phone, MapPin, Check, ArrowRight } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import { Reveal } from "@/components/Motion";
 
-const interests = ["Buying", "Selling", "Renting", "Management", "Advisory"];
+const interests = [
+  "Buy a home",
+  "Invest with us",
+  "Develop my property",
+  "Partnership",
+  "General",
+];
 
 export default function ContactPage() {
   const [form, setForm] = useState({
     name: "",
     email: "",
     phone: "",
-    interest: "Buying",
+    interest: "Buy a home",
     message: "",
   });
   const [sent, setSent] = useState(false);
@@ -21,7 +27,6 @@ export default function ContactPage() {
   const [serverError, setServerError] = useState("");
   const [errors, setErrors] = useState({});
 
-  const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
   const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
   const validate = () => {
@@ -72,7 +77,7 @@ export default function ContactPage() {
       <PageHeader
         eyebrow="Get in touch"
         title="Let's talk."
-        subtitle="Tell us what you're looking for — or what you'd like to sell. We read every message and reply within one working day."
+        subtitle="Looking for a finished home, a project to invest in, or help developing your own? Tell us a little about it — we read every message and reply within one working day."
       />
 
       <section className="bg-bone py-20 md:py-28">
@@ -136,11 +141,6 @@ export default function ContactPage() {
                     <motion.span
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 260,
-                        damping: 18,
-                      }}
                       transition={{
                         type: "spring",
                         stiffness: 260,
@@ -216,17 +216,11 @@ export default function ContactPage() {
                       <label className="eyebrow text-taupe-dark">
                         I'm interested in
                       </label>
-                      <label className="eyebrow text-taupe-dark">
-                        I'm interested in
-                      </label>
                       <div className="mt-3 flex flex-wrap gap-2">
                         {interests.map((it) => (
                           <button
                             type="button"
                             key={it}
-                            onClick={() =>
-                              setForm((f) => ({ ...f, interest: it }))
-                            }
                             onClick={() =>
                               setForm((f) => ({ ...f, interest: it }))
                             }
@@ -320,9 +314,6 @@ function ContactRow({ icon: Icon, label, value, href }) {
         <p className="text-xs uppercase tracking-eyebrow text-taupe-dark">
           {label}
         </p>
-        <p className="text-xs uppercase tracking-eyebrow text-taupe-dark">
-          {label}
-        </p>
         <p className="mt-1 text-ink/85">{value}</p>
       </div>
     </div>
@@ -330,10 +321,6 @@ function ContactRow({ icon: Icon, label, value, href }) {
   return (
     <li>
       {href ? (
-        <a
-          href={href}
-          className="group block transition-opacity hover:opacity-70"
-        >
         <a
           href={href}
           className="group block transition-opacity hover:opacity-70"

@@ -34,10 +34,10 @@ const team = [
 ];
 
 const stats = [
-  { to: 5, suffix: "+", label: "Yea rs of practice" },
-  { to: 6, suffix: "", label: "Homes placed" },
-  { to: 2, suffix: "", label: "Cities served" },
-  { to: 98, suffix: "%", label: "Client retention" },
+  { to: 5, suffix: "+", label: "Years developing" },
+  { to: 6, suffix: "", label: "Homes transformed" },
+  { to: 2, suffix: "", label: "Cities developing in" },
+  { to: 98, suffix: "%", label: "Repeat partners" },
 ];
 
 export default function AboutPage() {
@@ -71,16 +71,16 @@ export default function AboutPage() {
             <Reveal delay={0.2}>
               <div className="mt-7 space-y-5 text-lg leading-relaxed text-ink/70">
                 <p>
-                  CITYMORE HOMES LIMITED began in 2021 with one agent, a
-                  notebook, and a conviction that real estate had lost its sense
-                  of care. We chose to grow slowly — to know every home on our
-                  books and every client by name.
+                  CITYMORE HOMES LIMITED began in 2021 with a single property, a
+                  small team, and a conviction that real estate had lost its
+                  sense of care. We chose to grow slowly — to know every home we
+                  develop down to the detail, and every partner by name.
                 </p>
                 <p>
-                  More than a decade later, that hasn't changed. We still take
-                  on fewer clients than we could, because attention doesn't
-                  scale the way listings do. The result is a practice people
-                  return to, and recommend.
+                  Five years on, that hasn't changed. We still take on fewer
+                  projects than we could, because craft doesn't scale the way
+                  listings do. The result is work people return to, and
+                  recommend.
                 </p>
               </div>
             </Reveal>

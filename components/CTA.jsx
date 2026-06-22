@@ -12,14 +12,14 @@ export default function CTA() {
           <Roofline color="#0A0A0A" className="h-20 w-56" strokeWidth={2.2} />
         </Reveal>
         <h2 className="mt-8 font-display text-4xl leading-[1.02] md:text-7xl">
-          <RevealText text="Let's find the" />
+          <RevealText text="Let's build" />
           <br />
-          <RevealText text="one that's yours." delay={0.15} />
+          <RevealText text="something that lasts." delay={0.15} />
         </h2>
         <Reveal delay={0.2}>
           <p className="mx-auto mt-7 max-w-xl text-lg text-ink/60">
-            Tell us what you're looking for. We'll do the searching — and the thinking —
-            for you.
+            Whether you're after a finished home, a project to invest in, or a partner
+            to develop your own — let's start the conversation.
           </p>
         </Reveal>
         <Reveal delay={0.3}>

@@ -56,7 +56,7 @@ export default function Hero() {
         <h1 className="max-w-4xl font-display text-5xl leading-[0.98] sm:text-6xl md:text-7xl lg:text-[5.5rem]">
           <RevealText text="Refined living," />
           <br />
-          <RevealText text="realised." delay={0.25} />
+          <RevealText text="built from the ground up." delay={0.25} />
         </h1>
 
         <motion.p
@@ -65,8 +65,9 @@ export default function Hero() {
           transition={{ delay: 0.9, duration: 0.8 }}
           className="mt-8 max-w-xl text-lg leading-relaxed text-bone/75"
         >
-          We help discerning clients buy, sell, and manage exceptional homes — with
-          taste, discretion, and a deep respect for the places people live.
+          We acquire, design, and transform properties into exceptional homes —
+          and partner with investors who want to build real value, with taste and
+          a deep respect for the places people live.
         </motion.p>
 
         <motion.div
@@ -90,9 +91,9 @@ export default function Hero() {
           transition={{ delay: 1.3, duration: 0.8 }}
           className="mt-16 grid max-w-2xl grid-cols-3 gap-6 border-t border-bone/15 pt-8"
         >
-          <Stat value={<Counter to={12} suffix="+" />} label="Years of practice" />
-          <Stat value={<Counter to={480} suffix="" />} label="Homes placed" />
-          <Stat value={<Counter to={98} suffix="%" />} label="Client retention" />
+          <Stat value={<Counter to={5} suffix="+" />} label="Years developing" />
+          <Stat value={<Counter to={6} suffix="" />} label="Homes transformed" />
+          <Stat value={<Counter to={2} suffix="" />} label="Cities developing in" />
         </motion.div>
       </div>
 

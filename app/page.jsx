@@ -13,11 +13,11 @@ export default function HomePage() {
       <div className="border-y border-ink/10 bg-bone-light py-6 text-ink">
         <Marquee
           items={[
-            "Curated Listings",
-            "White-Glove Service",
+            "Property Development",
+            "Acquire · Transform · Sell",
             "Lagos · Abuja",
-            "Refined Living",
-            "Trusted Since 2021",
+            "Investor Partnerships",
+            "Building Since 2021",
           ]}
         />
       </div>

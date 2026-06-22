@@ -1,6 +1,6 @@
 "use client";
 
-import { Home, KeyRound, Building2, LineChart } from "lucide-react";
+import { Building2, Hammer, TrendingUp, Handshake } from "lucide-react";
 import { motion } from "framer-motion";
 import PageHeader from "@/components/PageHeader";
 import { Reveal } from "@/components/Motion";
@@ -8,28 +8,28 @@ import CTA from "@/components/CTA";
 
 const services = [
   {
-    icon: Home,
-    title: "Buying",
-    body: "A guided, unhurried search. We learn how you live, then bring you a tight shortlist of homes that actually fit — with honest counsel on value, condition, and the neighbourhood.",
-    points: ["Needs consultation", "Curated shortlist", "Private viewings", "Negotiation & close"],
-  },
-  {
-    icon: KeyRound,
-    title: "Selling",
-    body: "Considered marketing that protects your privacy and your price. From styling and photography to qualified buyers only, we present your home the way it deserves.",
-    points: ["Valuation & pricing", "Styling & photography", "Qualified buyers", "Discreet listing"],
-  },
-  {
     icon: Building2,
-    title: "Property management",
-    body: "Hands-off ownership for landlords who'd rather not think about it. We handle tenants, maintenance, and rent — and you get a clear report each month.",
-    points: ["Tenant placement", "Maintenance", "Rent collection", "Monthly reporting"],
+    title: "Property development",
+    body: "We acquire land and properties and develop them into finished homes — managing design, build, and delivery end to end, to a standard we'd happily live in ourselves.",
+    points: ["Site acquisition", "Design & planning", "Build management", "Finished delivery"],
   },
   {
-    icon: LineChart,
-    title: "Investment advisory",
-    body: "Clear-eyed guidance on where to put capital and why. We model returns, flag risk, and only recommend what we'd buy ourselves.",
-    points: ["Market analysis", "Yield modelling", "Portfolio strategy", "Exit planning"],
+    icon: Hammer,
+    title: "Property flips",
+    body: "We buy undervalued and tired properties, transform them with a sharp eye for value, and bring them back to market as homes people genuinely want to live in.",
+    points: ["Sourcing & due diligence", "Renovation", "Styling & staging", "Sale & value realised"],
+  },
+  {
+    icon: TrendingUp,
+    title: "Invest with us",
+    body: "Build with us. We invite investors to co-fund selected projects and share in the returns — backed by clear terms, careful underwriting, and honest reporting throughout.",
+    points: ["Project co-funding", "Transparent terms", "Risk modelling", "Profit share"],
+  },
+  {
+    icon: Handshake,
+    title: "Development advisory",
+    body: "Own a property with potential? We help owners plan, finance, and manage their own development — from first feasibility study through to handover.",
+    points: ["Feasibility study", "Design & planning", "Project management", "Handover"],
   },
 ];
 
@@ -39,7 +39,7 @@ export default function ServicesPage() {
       <PageHeader
         eyebrow="What we do"
         title="Services"
-        subtitle="Four ways we help — each built on the same idea: fewer clients, more attention, better outcomes."
+        subtitle="Four ways we create value in property — from acquiring and transforming homes to building alongside the investors and owners who back us."
       />
 
       <section className="bg-bone py-20 md:py-28">
