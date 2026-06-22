@@ -12,7 +12,11 @@ export default function Footer() {
       <div className="container-site py-20">
         <div className="grid gap-14 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <Roofline color="#EBE6D4" className="mb-6 h-16 w-44" strokeWidth={2.4} />
+            <Roofline
+              color="#EBE6D4"
+              className="mb-6 h-16 w-44"
+              strokeWidth={2.4}
+            />
             <Image
               src="/citymore-logo-light.png"
               alt="CITYMORE HOMES LIMITED"
@@ -21,8 +25,8 @@ export default function Footer() {
               className="h-14 w-auto"
             />
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-taupe">
-              A real estate company built on trust, taste, and a deep respect for the
-              places people call home.
+              A real estate company built on trust, taste, and a deep respect
+              for the places people call home.
             </p>
           </div>
 
@@ -57,10 +61,10 @@ export default function Footer() {
                 </a>
               </li>
               <li className="inline-flex items-center gap-2 text-taupe">
-                <Phone size={15} /> +234 800 000 0000
+                <Phone size={15} /> +234 903 755 5786
               </li>
               <li className="inline-flex items-start gap-2 text-taupe">
-                <MapPin size={15} className="mt-0.5" /> Victoria Island, Lagos, Nigeria
+                <MapPin size={15} className="mt-0.5" /> Ogba, Lagos, Nigeria
               </li>
             </ul>
             <Link
@@ -74,7 +78,9 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-bone/15 pt-8 text-xs text-taupe sm:flex-row sm:items-center">
           <p>© {year} CITYMORE HOMES LIMITED. All rights reserved.</p>
-          <p className="font-sans uppercase tracking-eyebrow">Refined living, realised</p>
+          <p className="font-sans uppercase tracking-eyebrow">
+            Refined living, realised
+          </p>
         </div>
       </div>
     </footer>
@@ -88,7 +94,10 @@ function FooterCol({ title, items }) {
       <ul className="mt-5 space-y-3 text-sm">
         {items.map(([label, href]) => (
           <li key={label}>
-            <Link href={href} className="link-wipe text-bone/80 hover:text-bone">
+            <Link
+              href={href}
+              className="link-wipe text-bone/80 hover:text-bone"
+            >
               {label}
             </Link>
           </li>

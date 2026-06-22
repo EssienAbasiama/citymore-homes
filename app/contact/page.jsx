@@ -19,8 +19,7 @@ export default function ContactPage() {
   const [sent, setSent] = useState(false);
   const [errors, setErrors] = useState({});
 
-  const update = (k) => (e) =>
-    setForm((f) => ({ ...f, [k]: e.target.value }));
+  const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
   const validate = () => {
     const err = {};
@@ -38,7 +37,7 @@ export default function ContactPage() {
     // Front-end demo: open the user's mail client pre-filled to hello@citymorehomes.com
     const subject = encodeURIComponent(`New enquiry — ${form.interest}`);
     const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nInterest: ${form.interest}\n\n${form.message}`
+      `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nInterest: ${form.interest}\n\n${form.message}`,
     );
     window.location.href = `mailto:hello@citymorehomes.com?subject=${subject}&body=${body}`;
     setSent(true);
@@ -79,7 +78,7 @@ export default function ContactPage() {
               <ContactRow
                 icon={MapPin}
                 label="Office"
-                value="Victoria Island, Lagos, Nigeria"
+                value="Ogba, Lagos, Nigeria"
               />
             </ul>
 
@@ -113,16 +112,22 @@ export default function ContactPage() {
                     <motion.span
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
-                      transition={{ type: "spring", stiffness: 260, damping: 18 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 18,
+                      }}
                       className="flex h-16 w-16 items-center justify-center rounded-full bg-ink text-bone"
                     >
                       <Check size={28} />
                     </motion.span>
-                    <h3 className="mt-6 font-display text-3xl">Message ready</h3>
+                    <h3 className="mt-6 font-display text-3xl">
+                      Message ready
+                    </h3>
                     <p className="mt-3 max-w-sm text-ink/60">
-                      Your email to <strong>hello@citymorehomes.com</strong> is opening
-                      now. If nothing happened, email us directly — we'll be in touch
-                      within one working day.
+                      Your email to <strong>hello@citymorehomes.com</strong> is
+                      opening now. If nothing happened, email us directly —
+                      we'll be in touch within one working day.
                     </p>
                     <button
                       onClick={() => setSent(false)}
@@ -173,13 +178,17 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="eyebrow text-taupe-dark">I'm interested in</label>
+                      <label className="eyebrow text-taupe-dark">
+                        I'm interested in
+                      </label>
                       <div className="mt-3 flex flex-wrap gap-2">
                         {interests.map((it) => (
                           <button
                             type="button"
                             key={it}
-                            onClick={() => setForm((f) => ({ ...f, interest: it }))}
+                            onClick={() =>
+                              setForm((f) => ({ ...f, interest: it }))
+                            }
                             className={`rounded-full border px-4 py-2 text-sm transition-all duration-300 ${
                               form.interest === it
                                 ? "border-ink bg-ink text-bone"
@@ -257,7 +266,9 @@ function ContactRow({ icon: Icon, label, value, href }) {
         <Icon size={18} />
       </span>
       <div>
-        <p className="text-xs uppercase tracking-eyebrow text-taupe-dark">{label}</p>
+        <p className="text-xs uppercase tracking-eyebrow text-taupe-dark">
+          {label}
+        </p>
         <p className="mt-1 text-ink/85">{value}</p>
       </div>
     </div>
@@ -265,7 +276,10 @@ function ContactRow({ icon: Icon, label, value, href }) {
   return (
     <li>
       {href ? (
-        <a href={href} className="group block transition-opacity hover:opacity-70">
+        <a
+          href={href}
+          className="group block transition-opacity hover:opacity-70"
+        >
           {content}
         </a>
       ) : (

@@ -17,7 +17,7 @@ export default function HomePage() {
             "White-Glove Service",
             "Lagos · Abuja",
             "Refined Living",
-            "Trusted Since 2013",
+            "Trusted Since 2021",
           ]}
         />
       </div>

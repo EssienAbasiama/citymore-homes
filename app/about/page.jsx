@@ -34,8 +34,8 @@ const team = [
 ];
 
 const stats = [
-  { to: 12, suffix: "+", label: "Years of practice" },
-  { to: 480, suffix: "", label: "Homes placed" },
+  { to: 5, suffix: "+", label: "Yea rs of practice" },
+  { to: 6, suffix: "", label: "Homes placed" },
   { to: 2, suffix: "", label: "Cities served" },
   { to: 98, suffix: "%", label: "Client retention" },
 ];
@@ -71,14 +71,16 @@ export default function AboutPage() {
             <Reveal delay={0.2}>
               <div className="mt-7 space-y-5 text-lg leading-relaxed text-ink/70">
                 <p>
-                  CITYMORE HOMES LIMITED began in 2013 with one agent, a notebook, and a
-                  conviction that real estate had lost its sense of care. We chose to grow
-                  slowly — to know every home on our books and every client by name.
+                  CITYMORE HOMES LIMITED began in 2021 with one agent, a
+                  notebook, and a conviction that real estate had lost its sense
+                  of care. We chose to grow slowly — to know every home on our
+                  books and every client by name.
                 </p>
                 <p>
-                  More than a decade later, that hasn't changed. We still take on fewer
-                  clients than we could, because attention doesn't scale the way listings
-                  do. The result is a practice people return to, and recommend.
+                  More than a decade later, that hasn't changed. We still take
+                  on fewer clients than we could, because attention doesn't
+                  scale the way listings do. The result is a practice people
+                  return to, and recommend.
                 </p>
               </div>
             </Reveal>
@@ -90,7 +92,11 @@ export default function AboutPage() {
       <section className="bg-ink py-20 text-bone md:py-24">
         <div className="container-site">
           <div className="flex justify-center">
-            <Roofline color="#EBE6D4" className="mb-12 h-14 w-40" strokeWidth={2} />
+            <Roofline
+              color="#EBE6D4"
+              className="mb-12 h-14 w-40"
+              strokeWidth={2}
+            />
           </div>
           <div className="grid grid-cols-2 gap-10 text-center md:grid-cols-4">
             {stats.map((s) => (
@@ -108,7 +114,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="bg-bone py-20 md:py-28">
+      {/* <section className="bg-bone py-20 md:py-28">
         <div className="container-site">
           <Reveal className="eyebrow text-taupe-dark">The people</Reveal>
           <h2 className="mt-4 max-w-2xl font-display text-4xl leading-tight md:text-6xl">
@@ -134,7 +140,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <CTA />
     </>
