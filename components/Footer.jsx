@@ -35,7 +35,7 @@ export default function Footer() {
             title="Explore"
             items={[
               ["Home", "/"],
-              ["Properties", "/properties"],
+              // ["Properties", "/properties"],
               ["Projects", "/projects"],
               ["Services", "/services"],
               ["About", "/about"],
