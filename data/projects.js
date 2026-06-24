@@ -5,43 +5,6 @@
 
 export const projects = [
   {
-    slug: "the-bowery-residence",
-    name: "The Bowery Residence",
-    location: "Ikoyi, Lagos",
-    status: "Completed", // Completed | Ongoing | Upcoming
-    type: "Development", // Development | Flip | Renovation
-    year: "2024",
-    duration: "14 months",
-    featured: true,
-    cover:
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
-    summary:
-      "A tired lagoon-front plot transformed into a double-height penthouse wrapped in glass, with a private rooftop terrace.",
-    overview: [
-      "We acquired a dated, structurally sound block on the Ikoyi waterfront and reimagined it from the ground up. The brief was a single, uncompromising idea: bring the lagoon into the building.",
-      "Floors were opened up, the facade re-clad in glass, and a double-height living volume carved through the centre of the home. The result is a penthouse that feels carved from light.",
-    ],
-    scope: [
-      "Full structural refurbishment",
-      "New glass curtain-wall facade",
-      "Rooftop terrace & pool",
-      "Bespoke joinery throughout",
-    ],
-    stats: [
-      { label: "Floor area", value: "420 m²" },
-      { label: "Bedrooms", value: "4" },
-      { label: "Bathrooms", value: "5" },
-      { label: "Outcome", value: "Sold at ₦480M" },
-    ],
-    gallery: [
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1400&q=80",
-    ],
-    result:
-      "Brought to market on completion and sold within six weeks at ₦480M — a 38% uplift on total project cost.",
-  },
-  {
     slug: "marigold-villa",
     name: "Marigold Villa",
     location: "Ogba, Lagos",
@@ -105,42 +68,6 @@ export const projects = [
     ],
     result:
       "Delivered in seven months and sold — a turnkey, smart-home duplex finished to a move-in standard.",
-  },
-  {
-    slug: "savannah-estate",
-    name: "Savannah Estate",
-    location: "Abuja, FCT",
-    status: "Ongoing",
-    type: "Development",
-    year: "2025",
-    duration: "In progress",
-    featured: false,
-    cover:
-      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1600&q=80",
-    summary:
-      "A ground-up modern estate with wraparound verandas, solar power, and mature landscaping across half an acre.",
-    overview: [
-      "Our first ground-up development in Abuja. Half an acre of cleared land becoming a single, generous family estate designed around shade, cross-ventilation, and energy independence.",
-      "Currently at superstructure stage. We are inviting a small number of co-investors into the project ahead of completion in 2026.",
-    ],
-    scope: [
-      "Ground-up construction",
-      "Full solar & inverter system",
-      "Wraparound veranda",
-      "Landscaping & borehole",
-    ],
-    stats: [
-      { label: "Plot", value: "0.5 acre" },
-      { label: "Bedrooms", value: "5" },
-      { label: "Bathrooms", value: "6" },
-      { label: "Status", value: "Superstructure" },
-    ],
-    gallery: [
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1416331108676-a22ccb276e35?auto=format&fit=crop&w=1400&q=80",
-    ],
-    result:
-      "Targeting completion in Q3 2026. Co-investment slots are open — get in touch to discuss terms.",
   },
 ];
 
