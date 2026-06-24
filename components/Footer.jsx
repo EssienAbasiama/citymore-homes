@@ -36,6 +36,7 @@ export default function Footer() {
             items={[
               ["Home", "/"],
               ["Properties", "/properties"],
+              ["Projects", "/projects"],
               ["Services", "/services"],
               ["About", "/about"],
             ]}
