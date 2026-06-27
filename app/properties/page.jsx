@@ -19,7 +19,7 @@ export default function PropertiesPage() {
       <PageHeader
         eyebrow="The portfolio"
         title="Properties"
-        subtitle="A small, deliberately curated collection of homes across Lagos and Abuja. New listings added the moment they're ready — never before."
+        subtitle="A small, deliberately curated collection of homes across Lagos. New listings added the moment they're ready — never before."
       />
 
       <section className="bg-bone py-16 md:py-24">

@@ -91,9 +91,9 @@ export default function Hero() {
           transition={{ delay: 1.3, duration: 0.8 }}
           className="mt-16 grid max-w-2xl grid-cols-3 gap-6 border-t border-bone/15 pt-8"
         >
-          <Stat value={<Counter to={5} suffix="+" />} label="Years developing" />
+          <Stat value={<Counter to={7} suffix="+" />} label="Years developing" />
           <Stat value={<Counter to={6} suffix="" />} label="Homes transformed" />
-          <Stat value={<Counter to={2} suffix="" />} label="Cities developing in" />
+          <Stat value={<Counter to={1} suffix="" />} label="City of operation" />
         </motion.div>
       </div>
 

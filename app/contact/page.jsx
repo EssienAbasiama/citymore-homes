@@ -42,13 +42,6 @@ export default function ContactPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
-    // Front-end demo: open the user's mail client pre-filled to hello@citymorehomes.com
-    const subject = encodeURIComponent(`New enquiry — ${form.interest}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nInterest: ${form.interest}\n\n${form.message}`,
-    );
-    window.location.href = `mailto:hello@citymorehomes.com?subject=${subject}&body=${body}`;
-    setSent(true);
     setSending(true);
     setServerError("");
     try {
@@ -58,7 +51,7 @@ export default function ContactPage() {
         body: JSON.stringify(form),
       });
       if (!res.ok) {
-        const data = await res.json();
+        const data = await res.json().catch(() => ({}));
         setServerError(data.error || "Something went wrong. Please try again.");
       } else {
         setSent(true);
@@ -150,19 +143,10 @@ export default function ContactPage() {
                     >
                       <Check size={28} />
                     </motion.span>
-                    <h3 className="mt-6 font-display text-3xl">
-                      Message ready
-                    </h3>
-                    <h3 className="mt-6 font-display text-3xl">
-                      Message sent!
-                    </h3>
+                    <h3 className="mt-6 font-display text-3xl">Message sent</h3>
                     <p className="mt-3 max-w-sm text-ink/60">
-                      Your email to <strong>hello@citymorehomes.com</strong> is
-                      opening now. If nothing happened, email us directly —
-                      we'll be in touch within one working day.
-                      Your message has been sent to{" "}
-                      <strong>hello@citymorehomes.com</strong>. We'll be in
-                      touch within one working day.
+                      Thank you — your message is on its way to our team. We'll
+                      be in touch within one working day.
                     </p>
                     <button
                       onClick={() => setSent(false)}
@@ -318,6 +302,7 @@ function ContactRow({ icon: Icon, label, value, href }) {
       </div>
     </div>
   );
+
   return (
     <li>
       {href ? (

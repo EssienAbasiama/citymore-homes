@@ -83,7 +83,7 @@ export const properties = [
   {
     id: "savannah-estate",
     name: "Savannah Estate",
-    location: "Abuja, FCT",
+    location: "Ajah, Lagos",
     price: "₦650,000,000",
     type: "For Sale",
     category: "Villa",

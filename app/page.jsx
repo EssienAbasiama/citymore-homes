@@ -15,7 +15,7 @@ export default function HomePage() {
           items={[
             "Property Development",
             "Acquire · Transform · Sell",
-            "Lagos · Abuja",
+            "Lagos, Nigeria",
             "Investor Partnerships",
             "Building Since 2021",
           ]}
