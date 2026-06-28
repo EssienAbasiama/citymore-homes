@@ -2,12 +2,16 @@
 
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { properties } from "@/data/properties";
-import PropertyCard from "./PropertyCard";
+import { projects } from "@/data/projects";
+import ProjectCard from "./ProjectCard";
 import { Reveal, RevealText } from "./Motion";
 
-export default function FeaturedProperties() {
-  const featured = properties.filter((p) => p.featured).slice(0, 3);
+export default function FeaturedProjects() {
+  // Featured projects first, then fill with the rest — up to three.
+  const featured = [...projects]
+    .sort((a, b) => Number(b.featured) - Number(a.featured))
+    .slice(0, 3);
+
   return (
     <section className="bg-bone py-24 md:py-32">
       <div className="container-site">
@@ -21,15 +25,15 @@ export default function FeaturedProperties() {
             </h2>
           </div>
           <Reveal delay={0.2}>
-            <Link href="/properties" className="link-wipe inline-flex items-center gap-1.5 text-sm font-medium">
-              View all properties <ArrowUpRight size={16} />
+            <Link href="/projects" className="link-wipe inline-flex items-center gap-1.5 text-sm font-medium">
+              View all projects <ArrowUpRight size={16} />
             </Link>
           </Reveal>
         </div>
 
         <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((p, i) => (
-            <PropertyCard key={p.id} property={p} index={i} />
+            <ProjectCard key={p.slug} project={p} index={i} />
           ))}
         </div>
       </div>

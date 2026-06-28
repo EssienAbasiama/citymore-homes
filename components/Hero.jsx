@@ -76,8 +76,8 @@ export default function Hero() {
           transition={{ delay: 1.05, duration: 0.8 }}
           className="mt-10 flex flex-wrap items-center gap-4"
         >
-          <Link href="/properties" className="btn-light">
-            View properties
+          <Link href="/projects" className="btn-light">
+            View projects
           </Link>
           <Link href="/contact" className="btn-outline border-bone/40 text-bone hover:bg-bone hover:text-ink">
             Book a viewing

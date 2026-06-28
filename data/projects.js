@@ -5,15 +5,15 @@
 
 export const projects = [
   {
-    slug: "marigold-villa",
-    name: "Marigold Villa",
+    slug: "marigold-duplex",
+    name: "Marigold Duplex",
     location: "Ogba, Lagos",
     status: "Completed",
     type: "Detached Duplex",
     year: "2025",
     duration: "7 months",
     featured: true,
-    cover: "/projects/marigold-villa/IMG_8334.png",
+    cover: "/projects/marigold-duplex/IMG_8335.png",
     summary:
       "A four-bedroom detached duplex in Ogba, finished to a turnkey smart-home standard — solar-ready power, full CCTV and smart access, and a fully fitted kitchen.",
     overview: [
@@ -48,26 +48,63 @@ export const projects = [
     // "portrait" frames vertical phone footage without cropping.
     video: {
       orientation: "portrait",
-      poster: "/projects/marigold-villa/walkthrough-poster.jpg",
-      hls: "/projects/marigold-villa/hls/master.m3u8",
+      poster: "/projects/marigold-duplex/walkthrough-poster.jpg",
+      hls: "/projects/marigold-duplex/hls/master.m3u8",
       sources: [
-        { src: "/projects/marigold-villa/walkthrough.mp4", type: "video/mp4" },
+        { src: "/projects/marigold-duplex/walkthrough.mp4", type: "video/mp4" },
       ],
     },
     gallery: [
-      "/projects/marigold-villa/IMG_8334.png",
-      "/projects/marigold-villa/IMG_8335.png",
+      "/projects/marigold-duplex/IMG_8335.png",
     ],
     plans: [
-      { src: "/projects/marigold-villa/IMG_0918.png", caption: "Ground Floor" },
-      { src: "/projects/marigold-villa/IMG_0919.png", caption: "Upper Floor" },
-      { src: "/projects/marigold-villa/IMG_8339.png", caption: "Front Elevation" },
-      { src: "/projects/marigold-villa/IMG_8344.png", caption: "Back Elevation" },
-      { src: "/projects/marigold-villa/IMG_8342.png", caption: "Left Elevation" },
-      { src: "/projects/marigold-villa/IMG_8337.png", caption: "Right Elevation" },
+      { src: "/projects/marigold-duplex/IMG_0918.png", caption: "Ground Floor" },
+      { src: "/projects/marigold-duplex/IMG_0919.png", caption: "Upper Floor" },
+      { src: "/projects/marigold-duplex/IMG_8338.png", caption: "Front Elevation" },
+      { src: "/projects/marigold-duplex/IMG_8344.png", caption: "Back Elevation" },
+      { src: "/projects/marigold-duplex/IMG_8342.png", caption: "Left Elevation" },
+      { src: "/projects/marigold-duplex/IMG_8337.png", caption: "Right Elevation" },
     ],
     result:
       "Delivered in seven months and sold — a turnkey, smart-home duplex finished to a move-in standard.",
+  },
+  {
+    slug: "ifako-ijaye",
+    name: "Ifako-Ijaye",
+    location: "Ifako-Ijaye, Lagos",
+    status: "Completed", // TODO: confirm — Completed | Ongoing | Upcoming
+    type: "Detached Duplex",
+    year: "2025", // TODO: confirm year
+    duration: "—", // TODO: confirm build duration
+    featured: false,
+    cover: "/projects/ifako-ijaye/IMG_8334.png",
+    summary:
+      "A four-bedroom detached duplex development in Ifako-Ijaye, Lagos. Full details and walkthrough coming soon.", // TODO
+    overview: [
+      "Project overview coming soon.", // TODO: tell the story of this development.
+    ],
+    scope: [
+      "Four-bedroom detached duplex", // TODO: list the real scope of work
+    ],
+    stats: [
+      { label: "Bedrooms", value: "4" },
+      { label: "Bathrooms", value: "TBC" }, // TODO: bath count
+      { label: "Type", value: "Duplex" },
+      { label: "City", value: "Lagos" },
+    ],
+    // Add the walkthrough once transcoded — see public/projects/README.md:
+    // video: {
+    //   orientation: "portrait",
+    //   poster: "/projects/ifako-ijaye/walkthrough-poster.jpg",
+    //   hls: "/projects/ifako-ijaye/hls/master.m3u8",
+    //   sources: [{ src: "/projects/ifako-ijaye/walkthrough.mp4", type: "video/mp4" }],
+    // },
+    gallery: [
+      "/projects/ifako-ijaye/IMG_8334.png",
+    ],
+    plans: [
+      { src: "/projects/ifako-ijaye/front-elevation.png", caption: "Front Elevation" },
+    ],
   },
 ];
 

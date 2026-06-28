@@ -11,7 +11,7 @@ public/projects/
     2.jpg
     ground-floor.png   <- a plan / elevation drawing
     walkthrough.mp4    <- optional video walkthrough
-  marigold-villa/
+  marigold-duplex/
     cover.png
     ...
 ```
@@ -76,7 +76,7 @@ ffmpeg -y -i INPUT -vf "scale=720:-2" -c:v libx264 -preset veryfast \
   -c:a aac -b:a 128k -movflags +faststart walkthrough.mp4
 
 # Adaptive HLS ladder (1080/720/480/360) -> hls/master.m3u8
-# (see the marigold-villa folder for the full multi-rendition command)
+# (see the marigold-duplex folder for the full multi-rendition command)
 ```
 
 The HLS player (hls.js) and portrait/landscape handling are already built in —

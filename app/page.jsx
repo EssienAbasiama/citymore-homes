@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
-import FeaturedProperties from "@/components/FeaturedProperties";
+import FeaturedProjects from "@/components/FeaturedProjects";
 import Editorial from "@/components/Editorial";
 import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
@@ -21,7 +21,7 @@ export default function HomePage() {
           ]}
         />
       </div>
-      <FeaturedProperties />
+      <FeaturedProjects />
       <Editorial />
       <Process />
       <Testimonials />
