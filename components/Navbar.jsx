@@ -32,6 +32,14 @@ export default function Navbar() {
     setOpen(false);
   }, [pathname]);
 
+  // Pages with a dark hero behind the (transparent) navbar. Over these, the
+  // nav needs light text/icons to stay visible; once scrolled it gets a light
+  // background and switches back to dark. Other pages start on a light bg.
+  const darkHeroPage = pathname === "/" || /^\/projects\/[^/]+$/.test(pathname);
+  const overHero = darkHeroPage && !scrolled;
+  // The drawer is dark, so its close (X) icon must stay light while open.
+  const lightControls = overHero || open;
+
   return (
     <>
       <motion.header
@@ -65,7 +73,13 @@ export default function Navbar() {
                 <Link
                   href={l.href}
                   className={`link-wipe text-sm font-medium transition-colors ${
-                    pathname === l.href ? "text-ink" : "text-ink/60 hover:text-ink"
+                    overHero
+                      ? pathname === l.href
+                        ? "text-bone"
+                        : "text-bone/75 hover:text-bone"
+                      : pathname === l.href
+                        ? "text-ink"
+                        : "text-ink/60 hover:text-ink"
                   }`}
                 >
                   {l.label}
@@ -75,7 +89,10 @@ export default function Navbar() {
           </ul>
 
           <div className="hidden lg:block">
-            <Link href="/contact" className="btn-dark text-sm">
+            <Link
+              href="/contact"
+              className={`${overHero ? "btn-light" : "btn-dark"} text-sm`}
+            >
               Book a viewing
             </Link>
           </div>
@@ -83,7 +100,9 @@ export default function Navbar() {
           {/* Mobile toggle */}
           <button
             onClick={() => setOpen((v) => !v)}
-            className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full border border-ink/20 lg:hidden"
+            className={`relative z-10 flex h-11 w-11 items-center justify-center rounded-full border transition-colors lg:hidden ${
+              lightControls ? "border-bone/40 text-bone" : "border-ink/20 text-ink"
+            }`}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
           >
