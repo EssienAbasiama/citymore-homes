@@ -43,15 +43,18 @@ export const projects = [
       { icon: "ChefHat", title: "Fully fitted kitchen", body: "Gas hob, oven, and sleek cabinetry." },
       { icon: "Car", title: "Dedicated carport", body: "Durable flooring with easy access." },
     ],
-    // Video walkthrough. `hls` is an adaptive playlist (auto-adjusts quality to
-    // the viewer's bandwidth); `sources` is the MP4 fallback. `orientation`
-    // "portrait" frames vertical phone footage without cropping.
+    // Video walkthrough. The MP4 is hosted off-repo (on the public
+    // `citymore-homes-media` GitHub release) so the large file stays out of this
+    // repo and the deploy bundle. `orientation` "portrait" frames vertical phone
+    // footage without cropping. To swap hosts later, just change the `src` URL.
     video: {
       orientation: "portrait",
       poster: "/projects/marigold-duplex/walkthrough-poster.jpg",
-      hls: "/projects/marigold-duplex/hls/master.m3u8",
       sources: [
-        { src: "/projects/marigold-duplex/walkthrough.mp4", type: "video/mp4" },
+        {
+          src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/marigold-duplex-walkthrough.mp4",
+          type: "video/mp4",
+        },
       ],
     },
     gallery: [
@@ -92,12 +95,12 @@ export const projects = [
       { label: "Type", value: "Duplex" },
       { label: "City", value: "Lagos" },
     ],
-    // Add the walkthrough once transcoded — see public/projects/README.md:
+    // Walkthrough MP4 is hosted off-repo on the public `citymore-homes-media`
+    // release. Add a poster image (small, keep it local) then uncomment to enable:
     // video: {
     //   orientation: "portrait",
     //   poster: "/projects/ifako-ijaye/walkthrough-poster.jpg",
-    //   hls: "/projects/ifako-ijaye/hls/master.m3u8",
-    //   sources: [{ src: "/projects/ifako-ijaye/walkthrough.mp4", type: "video/mp4" }],
+    //   sources: [{ src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/ifako-ijaye-walkthrough.mp4", type: "video/mp4" }],
     // },
     gallery: [
       "/projects/ifako-ijaye/IMG_8334.png",

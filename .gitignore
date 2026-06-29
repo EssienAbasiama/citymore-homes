@@ -7,3 +7,11 @@
 npm-debug.log*
 .env*.local
 .vercel
+
+# Video walkthroughs are hosted off-repo (public citymore-homes-media release).
+# Keep large binaries out of git — see public/projects/README.md.
+*.mp4
+*.webm
+*.mov
+# HLS transcode artifacts (segments + playlists)
+public/projects/**/hls/

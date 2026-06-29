@@ -44,16 +44,16 @@ Paths in `data/projects.js` are relative to `public/`, so a file at
     { src: "/projects/the-bowery-residence/ground-floor.png", caption: "Ground Floor" },
     { src: "/projects/the-bowery-residence/front-elevation.png", caption: "Front Elevation" },
   ],
-  // Video walkthrough. `hls` is an adaptive playlist that auto-adjusts quality
-  // to the viewer's bandwidth (great on bad networks); `sources` is the MP4
-  // fallback. `orientation: "portrait"` frames vertical phone footage without
-  // cropping. Nothing loads until the viewer presses play.
+  // Video walkthrough. The MP4 is hosted OFF-REPO (see "Adding a video" below)
+  // so the large binary stays out of git and the deploy bundle — `src` is a full
+  // URL. `sources` lets the browser pick the best it can play. The `poster` is a
+  // small still and stays local. `orientation: "portrait"` frames vertical phone
+  // footage without cropping. Nothing loads until the viewer presses play.
   video: {
     orientation: "portrait", // omit for normal landscape (16:9)
     poster: "/projects/the-bowery-residence/walkthrough-poster.jpg",
-    hls: "/projects/the-bowery-residence/hls/master.m3u8",
     sources: [
-      { src: "/projects/the-bowery-residence/walkthrough.mp4", type: "video/mp4" },
+      { src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/the-bowery-residence-walkthrough.mp4", type: "video/mp4" },
     ],
   },
 }
@@ -61,26 +61,36 @@ Paths in `data/projects.js` are relative to `public/`, so a file at
 
 ### Adding a video for a new project
 
-Browsers can't play `.mov`/HEVC, and raw phone clips are far too big for slow
-networks — so transcode the source into an adaptive HLS ladder + an MP4 fallback
-with `ffmpeg` (installed via `winget install Gyan.FFmpeg`). From inside the
-project's folder, with `INPUT` = your source clip:
+Videos are **not committed to this repo** — they live on the public
+`citymore-homes-media` GitHub release and are referenced by URL. Only the small
+`poster` still is kept locally. To add one:
 
-```bash
-# Poster still
-ffmpeg -y -ss 2 -i INPUT -vframes 1 -q:v 3 walkthrough-poster.jpg
+1. **Transcode** the source to a web-friendly MP4 (browsers can't play
+   `.mov`/HEVC, and raw phone clips are far too big). With `ffmpeg`
+   (`winget install Gyan.FFmpeg`) and `INPUT` = your source clip:
 
-# MP4 fallback (portrait 720-wide; use scale=-2:720 for landscape)
-ffmpeg -y -i INPUT -vf "scale=720:-2" -c:v libx264 -preset veryfast \
-  -b:v 1800k -maxrate 1950k -bufsize 3600k -pix_fmt yuv420p \
-  -c:a aac -b:a 128k -movflags +faststart walkthrough.mp4
+   ```bash
+   # Poster still (kept local, in the project's public/ folder)
+   ffmpeg -y -ss 2 -i INPUT -vframes 1 -q:v 3 walkthrough-poster.jpg
 
-# Adaptive HLS ladder (1080/720/480/360) -> hls/master.m3u8
-# (see the marigold-duplex folder for the full multi-rendition command)
-```
+   # MP4 (portrait 720-wide; use scale=-2:720 for landscape).
+   # -movflags +faststart lets it start playing before fully downloaded.
+   ffmpeg -y -i INPUT -vf "scale=720:-2" -c:v libx264 -preset veryfast \
+     -b:v 1800k -maxrate 1950k -bufsize 3600k -pix_fmt yuv420p \
+     -c:a aac -b:a 128k -movflags +faststart <slug>-walkthrough.mp4
+   ```
 
-The HLS player (hls.js) and portrait/landscape handling are already built in —
-you only need the files and the `video` block above.
+2. **Upload** `<slug>-walkthrough.mp4` to the `media-v1` release of the public
+   repo `EssienAbasiama/citymore-homes-media` (GitHub UI: Releases → media-v1 →
+   Edit → drag the file in; or `gh release upload`).
+
+3. **Reference** the resulting public download URL in the project's `video.sources`
+   `src` (see the example above). Commit only the local poster image.
+
+> Want adaptive (HLS) streaming later for poor connections? The player
+> (`components/ProjectVideo.jsx`) still supports an `hls:` field — host the HLS
+> ladder on a CDN/object store that sends CORS headers (Bunny, Cloudflare R2,
+> Cloudinary) and add `hls: "https://…/master.m3u8"` alongside `sources`.
 
 ## Tips
 - **cover** should be landscape and high quality — it's the card thumbnail and the detail-page hero.
