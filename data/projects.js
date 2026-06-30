@@ -15,7 +15,7 @@ export const projects = [
     year: "2025",
     duration: "7 months",
     featured: true,
-    cover: "/projects/ifako-ijaye/IMG_8334.png",
+    cover: "/projects/the-nova/IMG_8334.png",
     summary:
       "A four-bedroom detached duplex with a BQ in Ogba, finished to a turnkey smart-home standard — solar-ready power, full CCTV and smart access, and a fully fitted kitchen.",
     overview: [
@@ -46,7 +46,7 @@ export const projects = [
     // release. Portrait phone footage, so `orientation: "portrait"`.
     video: {
       orientation: "portrait",
-      poster: "/projects/ifako-ijaye/walkthrough-poster.jpg",
+      poster: "/projects/the-nova/walkthrough-poster.jpg",
       sources: [
         {
           src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/ifako-ijaye-walkthrough.mp4",
@@ -55,10 +55,20 @@ export const projects = [
       ],
     },
     gallery: [
-      "/projects/ifako-ijaye/IMG_8334.png",
+      "/projects/the-nova/IMG_0961.PNG",
+      "/projects/the-nova/IMG_0962.PNG",
+      "/projects/the-nova/IMG_0963.PNG",
+      "/projects/the-nova/IMG_0964.PNG",
+      "/projects/the-nova/IMG_0965.PNG",
+      "/projects/the-nova/IMG_0966.PNG",
+      "/projects/the-nova/IMG_0967.PNG",
+      "/projects/the-nova/IMG_0968.PNG",
+      "/projects/the-nova/IMG_0969.PNG",
+      "/projects/the-nova/IMG_0970.PNG",
+      "/projects/the-nova/IMG_0971.PNG",
     ],
     plans: [
-      { src: "/projects/ifako-ijaye/front-elevation.png", caption: "Front Elevation" },
+      { src: "/projects/the-nova/front-elevation.png", caption: "Front Elevation" },
     ],
     result:
       "Completed in seven months — a turnkey, smart-home duplex finished to a standard we're proud of.",
@@ -73,7 +83,7 @@ export const projects = [
     year: "2025",
     duration: "7 months",
     featured: true,
-    cover: "/projects/marigold-duplex/IMG_8335.png",
+    cover: "/projects/terra/IMG_8335.png",
     summary:
       "A four-bedroom detached duplex with a BQ in Ogba, finished to a turnkey smart-home standard — solar-ready power, full CCTV and smart access, and a fully fitted kitchen.",
     overview: [
@@ -108,7 +118,7 @@ export const projects = [
     // repo and the deploy bundle. This clip is landscape 16:9 (omit
     // `orientation`). To swap hosts later, just change the `src` URL.
     video: {
-      poster: "/projects/marigold-duplex/walkthrough-poster.jpg",
+      poster: "/projects/terra/walkthrough-poster.jpg",
       sources: [
         {
           src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/marigold-duplex-walkthrough.mp4",
@@ -117,15 +127,15 @@ export const projects = [
       ],
     },
     gallery: [
-      "/projects/marigold-duplex/IMG_8335.png",
+      "/projects/terra/IMG_8335.png",
     ],
     plans: [
-      { src: "/projects/marigold-duplex/IMG_0918.png", caption: "Ground Floor" },
-      { src: "/projects/marigold-duplex/IMG_0919.png", caption: "Upper Floor" },
-      { src: "/projects/marigold-duplex/IMG_8338.png", caption: "Front Elevation" },
-      { src: "/projects/marigold-duplex/IMG_8344.png", caption: "Back Elevation" },
-      { src: "/projects/marigold-duplex/IMG_8342.png", caption: "Left Elevation" },
-      { src: "/projects/marigold-duplex/IMG_8337.png", caption: "Right Elevation" },
+      { src: "/projects/terra/IMG_0918.png", caption: "Ground Floor" },
+      { src: "/projects/terra/IMG_0919.png", caption: "Upper Floor" },
+      { src: "/projects/terra/IMG_8338.png", caption: "Front Elevation" },
+      { src: "/projects/terra/IMG_8344.png", caption: "Back Elevation" },
+      { src: "/projects/terra/IMG_8342.png", caption: "Left Elevation" },
+      { src: "/projects/terra/IMG_8337.png", caption: "Right Elevation" },
     ],
     result:
       "Delivered in seven months and sold — a turnkey, smart-home duplex finished to a move-in standard.",

@@ -11,7 +11,7 @@ public/projects/
     2.jpg
     ground-floor.png   <- a plan / elevation drawing
     walkthrough.mp4    <- optional video walkthrough
-  marigold-duplex/
+  terra/
     cover.png
     ...
 ```
