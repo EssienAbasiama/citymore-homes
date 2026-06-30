@@ -6,7 +6,7 @@
 
 export const projects = [
   {
-    slug: "ifako-ijaye",
+    slug: "the-nova",
     name: "The Nova",
     tagline: "Modern Living, Timeless Value",
     location: "Ogba, Lagos",
@@ -64,7 +64,7 @@ export const projects = [
       "Completed in seven months — a turnkey, smart-home duplex finished to a standard we're proud of.",
   },
   {
-    slug: "marigold-duplex",
+    slug: "terra",
     name: "Terra",
     tagline: "Grounded in Quality",
     location: "Ogba, Lagos",
