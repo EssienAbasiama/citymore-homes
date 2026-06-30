@@ -45,10 +45,9 @@ export const projects = [
     ],
     // Video walkthrough. The MP4 is hosted off-repo (on the public
     // `citymore-homes-media` GitHub release) so the large file stays out of this
-    // repo and the deploy bundle. `orientation` "portrait" frames vertical phone
-    // footage without cropping. To swap hosts later, just change the `src` URL.
+    // repo and the deploy bundle. This clip is landscape 16:9 (omit
+    // `orientation`). To swap hosts later, just change the `src` URL.
     video: {
-      orientation: "portrait",
       poster: "/projects/marigold-duplex/walkthrough-poster.jpg",
       sources: [
         {
@@ -96,12 +95,17 @@ export const projects = [
       { label: "City", value: "Lagos" },
     ],
     // Walkthrough MP4 is hosted off-repo on the public `citymore-homes-media`
-    // release. Add a poster image (small, keep it local) then uncomment to enable:
-    // video: {
-    //   orientation: "portrait",
-    //   poster: "/projects/ifako-ijaye/walkthrough-poster.jpg",
-    //   sources: [{ src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/ifako-ijaye-walkthrough.mp4", type: "video/mp4" }],
-    // },
+    // release. Portrait phone footage, so `orientation: "portrait"`.
+    video: {
+      orientation: "portrait",
+      poster: "/projects/ifako-ijaye/walkthrough-poster.jpg",
+      sources: [
+        {
+          src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/ifako-ijaye-walkthrough.mp4",
+          type: "video/mp4",
+        },
+      ],
+    },
     gallery: [
       "/projects/ifako-ijaye/IMG_8334.png",
     ],
