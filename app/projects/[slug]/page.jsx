@@ -92,6 +92,13 @@ export default function ProjectDetailPage({ params }) {
           <h1 className="mt-4 max-w-4xl font-display text-5xl leading-[1.02] md:text-7xl">
             <RevealText text={project.name} />
           </h1>
+          {project.tagline && (
+            <Reveal delay={0.12}>
+              <p className="mt-4 font-display text-xl text-bone/85 md:text-2xl">
+                {project.tagline}
+              </p>
+            </Reveal>
+          )}
           <Reveal delay={0.2}>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-bone/75">
               {project.summary}
@@ -173,6 +180,34 @@ export default function ProjectDetailPage({ params }) {
         </div>
       </section>
 
+      {/* Gallery */}
+      {galleryItems.length > 0 && (
+        <section className="bg-bone py-20 md:py-28">
+          <div className="container-site">
+            <Reveal className="eyebrow text-taupe-dark">Gallery</Reveal>
+            <h2 className="mt-4 mb-10 font-display text-3xl leading-tight md:text-5xl">
+              <RevealText text="The finished home." />
+            </h2>
+            <GalleryGrid items={galleryItems} variant="photos" />
+          </div>
+        </section>
+      )}
+
+      {/* Video walkthrough */}
+      {hasVideo && (
+        <section className="bg-bone-light py-20 md:py-28">
+          <div className="container-site">
+            <div className="mb-10 max-w-2xl">
+              <Reveal className="eyebrow text-taupe-dark">Walkthrough</Reveal>
+              <h2 className="mt-4 font-display text-3xl leading-tight md:text-5xl">
+                <RevealText text="See it in motion." />
+              </h2>
+            </div>
+            <ProjectVideo video={project.video} title={project.name} />
+          </div>
+        </section>
+      )}
+
       {/* Features & specification */}
       {project.features?.length > 0 && (
         <section className="bg-bone py-20 md:py-28">
@@ -207,34 +242,6 @@ export default function ProjectDetailPage({ params }) {
                 );
               })}
             </div>
-          </div>
-        </section>
-      )}
-
-      {/* Video walkthrough */}
-      {hasVideo && (
-        <section className="bg-bone-light py-20 md:py-28">
-          <div className="container-site">
-            <div className="mb-10 max-w-2xl">
-              <Reveal className="eyebrow text-taupe-dark">Walkthrough</Reveal>
-              <h2 className="mt-4 font-display text-3xl leading-tight md:text-5xl">
-                <RevealText text="See it in motion." />
-              </h2>
-            </div>
-            <ProjectVideo video={project.video} title={project.name} />
-          </div>
-        </section>
-      )}
-
-      {/* Gallery */}
-      {galleryItems.length > 0 && (
-        <section className="bg-bone py-20 md:py-28">
-          <div className="container-site">
-            <Reveal className="eyebrow text-taupe-dark">Gallery</Reveal>
-            <h2 className="mt-4 mb-10 font-display text-3xl leading-tight md:text-5xl">
-              <RevealText text="The finished home." />
-            </h2>
-            <GalleryGrid items={galleryItems} variant="photos" />
           </div>
         </section>
       )}

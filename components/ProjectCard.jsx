@@ -45,6 +45,11 @@ export default function ProjectCard({ project, index = 0 }) {
 
           <div className="absolute inset-x-0 bottom-0 p-5 text-bone">
             <p className="font-display text-2xl leading-snug">{project.name}</p>
+            {project.tagline && (
+              <p className="mt-1 text-xs uppercase tracking-eyebrow text-bone/75">
+                {project.tagline}
+              </p>
+            )}
             <p className="mt-2 inline-flex items-center gap-1.5 text-xs text-bone/85">
               <MapPin size={14} /> {project.location}
             </p>

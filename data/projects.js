@@ -1,12 +1,72 @@
 // CITYMORE development projects.
 // Add a new project by copying one block below and editing the fields.
 // `slug` must be unique — it becomes the URL: /projects/<slug>.
+// `tagline` is the short strapline shown under the name (hero + cards).
 // Images can be local (place in /public and use "/my-image.jpg") or remote URLs.
 
 export const projects = [
   {
+    slug: "ifako-ijaye",
+    name: "The Nova",
+    tagline: "Modern Living, Timeless Value",
+    location: "Ogba, Lagos",
+    status: "Completed",
+    type: "Detached Duplex",
+    year: "2025",
+    duration: "7 months",
+    featured: true,
+    cover: "/projects/ifako-ijaye/IMG_8334.png",
+    summary:
+      "A four-bedroom detached duplex with a BQ in Ogba, finished to a turnkey smart-home standard — solar-ready power, full CCTV and smart access, and a fully fitted kitchen.",
+    overview: [
+      "The Nova is a four-bedroom detached duplex with a BQ, completed in Ogba in just 7 months.",
+      "Designed for modern living, it features a solar-ready power system with a 10.2kVA inverter and 15kWh lithium battery, an automated swing gate with remote access, a fully fitted kitchen, 24/7 CCTV surveillance, an integrated Bluetooth sound system, and smart fingerprint access. Every detail was thoughtfully crafted to a standard we'd be proud to call home ourselves.",
+    ],
+    scope: [
+      "Full interior finishing",
+      "Solar & inverter installation",
+      "Smart security & access",
+      "Fitted kitchen",
+    ],
+    stats: [
+      { label: "Bedrooms", value: "4 + BQ" },
+      { label: "Build time", value: "7 months" },
+      { label: "Power", value: "Solar-ready" },
+      { label: "Status", value: "Completed" },
+    ],
+    features: [
+      { icon: "Sun", title: "Solar-ready power", body: "10.2kVA inverter and 15kWh lithium battery for true off-grid running." },
+      { icon: "DoorOpen", title: "Automated swing gate", body: "Open it by remote or straight from your phone." },
+      { icon: "Cctv", title: "24/7 CCTV security", body: "Full-property camera coverage, day and night." },
+      { icon: "Fingerprint", title: "Smart fingerprint access", body: "Keyless entry with secure fingerprint locks." },
+      { icon: "Speaker", title: "Integrated Bluetooth sound", body: "Wired into the living and common areas." },
+      { icon: "ChefHat", title: "Fully fitted kitchen", body: "Gas hob, oven, and sleek cabinetry." },
+    ],
+    // Walkthrough MP4 is hosted off-repo on the public `citymore-homes-media`
+    // release. Portrait phone footage, so `orientation: "portrait"`.
+    video: {
+      orientation: "portrait",
+      poster: "/projects/ifako-ijaye/walkthrough-poster.jpg",
+      sources: [
+        {
+          src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/ifako-ijaye-walkthrough.mp4",
+          type: "video/mp4",
+        },
+      ],
+    },
+    gallery: [
+      "/projects/ifako-ijaye/IMG_8334.png",
+    ],
+    plans: [
+      { src: "/projects/ifako-ijaye/front-elevation.png", caption: "Front Elevation" },
+    ],
+    result:
+      "Completed in seven months — a turnkey, smart-home duplex finished to a standard we're proud of.",
+  },
+  {
     slug: "marigold-duplex",
-    name: "Marigold Duplex",
+    name: "Terra",
+    tagline: "Grounded in Quality",
     location: "Ogba, Lagos",
     status: "Completed",
     type: "Detached Duplex",
@@ -15,10 +75,10 @@ export const projects = [
     featured: true,
     cover: "/projects/marigold-duplex/IMG_8335.png",
     summary:
-      "A four-bedroom detached duplex in Ogba, finished to a turnkey smart-home standard — solar-ready power, full CCTV and smart access, and a fully fitted kitchen.",
+      "A four-bedroom detached duplex with a BQ in Ogba, finished to a turnkey smart-home standard — solar-ready power, full CCTV and smart access, and a fully fitted kitchen.",
     overview: [
-      "Marigold is a four-bedroom detached duplex with a BQ, delivered in Ogba over seven months. The brief was a home that runs effortlessly from day one — power, security, and connectivity all handled before a family moves in.",
-      "It is solar-ready with a 10.2kVA inverter and 15kWh lithium battery, wrapped in 24/7 CCTV, smart fingerprint access, and high-speed Starlink WiFi. Every detail was finished to a standard we would happily live with ourselves.",
+      "Terra Living is a four-bedroom detached duplex with a BQ, completed in Ogba in just 7 months.",
+      "Designed for modern living, it features a solar-ready power system with a 10.2kVA inverter and 15kWh lithium battery, an automated swing gate with remote access, a fully fitted kitchen, 24/7 CCTV surveillance, an integrated Bluetooth sound system, and smart fingerprint access. Every detail was thoughtfully crafted to a standard we'd be proud to call home ourselves.",
     ],
     scope: [
       "Full interior finishing",
@@ -69,49 +129,6 @@ export const projects = [
     ],
     result:
       "Delivered in seven months and sold — a turnkey, smart-home duplex finished to a move-in standard.",
-  },
-  {
-    slug: "ifako-ijaye",
-    name: "Ifako-Ijaye",
-    location: "Ifako-Ijaye, Lagos",
-    status: "Completed", // TODO: confirm — Completed | Ongoing | Upcoming
-    type: "Detached Duplex",
-    year: "2025", // TODO: confirm year
-    duration: "—", // TODO: confirm build duration
-    featured: false,
-    cover: "/projects/ifako-ijaye/IMG_8334.png",
-    summary:
-      "A four-bedroom detached duplex development in Ifako-Ijaye, Lagos. Full details and walkthrough coming soon.", // TODO
-    overview: [
-      "Project overview coming soon.", // TODO: tell the story of this development.
-    ],
-    scope: [
-      "Four-bedroom detached duplex", // TODO: list the real scope of work
-    ],
-    stats: [
-      { label: "Bedrooms", value: "4" },
-      { label: "Bathrooms", value: "TBC" }, // TODO: bath count
-      { label: "Type", value: "Duplex" },
-      { label: "City", value: "Lagos" },
-    ],
-    // Walkthrough MP4 is hosted off-repo on the public `citymore-homes-media`
-    // release. Portrait phone footage, so `orientation: "portrait"`.
-    video: {
-      orientation: "portrait",
-      poster: "/projects/ifako-ijaye/walkthrough-poster.jpg",
-      sources: [
-        {
-          src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/ifako-ijaye-walkthrough.mp4",
-          type: "video/mp4",
-        },
-      ],
-    },
-    gallery: [
-      "/projects/ifako-ijaye/IMG_8334.png",
-    ],
-    plans: [
-      { src: "/projects/ifako-ijaye/front-elevation.png", caption: "Front Elevation" },
-    ],
   },
 ];
 
