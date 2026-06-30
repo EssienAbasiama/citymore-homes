@@ -113,19 +113,32 @@ export const projects = [
       { icon: "ChefHat", title: "Fully fitted kitchen", body: "Gas hob, oven, and sleek cabinetry." },
       { icon: "Car", title: "Dedicated carport", body: "Durable flooring with easy access." },
     ],
-    // Video walkthrough. The MP4 is hosted off-repo (on the public
-    // `citymore-homes-media` GitHub release) so the large file stays out of this
-    // repo and the deploy bundle. This clip is landscape 16:9 (omit
-    // `orientation`). To swap hosts later, just change the `src` URL.
-    video: {
-      poster: "/projects/terra/walkthrough-poster.jpg",
-      sources: [
-        {
-          src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/marigold-duplex-walkthrough.mp4",
-          type: "video/mp4",
-        },
-      ],
-    },
+    // Video walkthroughs. MP4s are hosted off-repo (on the public
+    // `citymore-homes-media` GitHub release) so the large files stay out of
+    // this repo and the deploy bundle. `videos` (plural) renders several clips;
+    // each takes the same shape as a single `video`. Set `orientation:
+    // "portrait"` for vertical phone footage. To swap hosts later, change `src`.
+    videos: [
+      {
+        orientation: "portrait",
+        poster: "/projects/terra/walkthrough-1-poster.jpg",
+        sources: [
+          {
+            src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/terra-walkthrough-1.mp4",
+            type: "video/mp4",
+          },
+        ],
+      },
+      {
+        poster: "/projects/terra/walkthrough-2-poster.jpg",
+        sources: [
+          {
+            src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/terra-walkthrough-2.mp4",
+            type: "video/mp4",
+          },
+        ],
+      },
+    ],
     gallery: [
       "/projects/terra/IMG_8335.png",
     ],

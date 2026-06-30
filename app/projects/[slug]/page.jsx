@@ -63,10 +63,16 @@ export default function ProjectDetailPage({ params }) {
     ChefHat,
     Car,
   };
-  const v = project.video;
-  const hasVideo =
-    !!v &&
-    (typeof v === "string" || v.src || v.hls || v.sources?.length > 0);
+  // A project can have one `video` or several `videos`; normalise to a list.
+  const videoList = project.videos?.length
+    ? project.videos
+    : project.video
+      ? [project.video]
+      : [];
+  const playable = (v) =>
+    !!v && (typeof v === "string" || v.src || v.hls || v.sources?.length > 0);
+  const videos = videoList.filter(playable);
+  const hasVideo = videos.length > 0;
 
   return (
     <>
@@ -203,7 +209,15 @@ export default function ProjectDetailPage({ params }) {
                 <RevealText text="See it in motion." />
               </h2>
             </div>
-            <ProjectVideo video={project.video} title={project.name} />
+            <div className="flex flex-col gap-10">
+              {videos.map((vid, i) => (
+                <ProjectVideo
+                  key={i}
+                  video={vid}
+                  title={`${project.name} walkthrough ${videos.length > 1 ? i + 1 : ""}`.trim()}
+                />
+              ))}
+            </div>
           </div>
         </section>
       )}
