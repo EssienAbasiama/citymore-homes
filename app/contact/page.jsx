@@ -106,16 +106,8 @@ export default function ContactPage() {
 
             <div className="mt-auto rounded-2xl bg-ink p-7 text-bone">
               <p className="font-display text-xl">Office hours</p>
-              <div className="mt-4 space-y-2 text-sm text-bone/70">
-                <p className="flex justify-between">
-                  <span>Monday – Friday</span> <span>9:00 – 18:00</span>
-                </p>
-                <p className="flex justify-between">
-                  <span>Saturday</span> <span>10:00 – 15:00</span>
-                </p>
-                <p className="flex justify-between">
-                  <span>Sunday</span> <span>By appointment</span>
-                </p>
+              <div className="mt-4 text-sm text-bone/70">
+                <p>By appointment</p>
               </div>
             </div>
           </Reveal>

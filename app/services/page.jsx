@@ -45,7 +45,7 @@ export default function ServicesPage() {
       <PageHeader
         eyebrow="What we do"
         title="Services"
-        subtitle="Four ways we create value in property — from acquiring and transforming homes to building alongside the investors and owners who back us."
+        subtitle="Five ways we create value in property — from acquiring and transforming homes to building alongside the investors and owners who back us."
       />
 
       <section className="bg-bone py-20 md:py-28">
