@@ -16,6 +16,10 @@ export const projects = [
     duration: "7 months",
     featured: true,
     cover: "/projects/the-nova/IMG_8334.png",
+    // Quick specs shown on the project card (beds · baths · parking).
+    beds: 5,
+    baths: 5,
+    cars: 2,
     summary:
       "A four-bedroom detached duplex with a BQ in Ogba, finished to a turnkey smart-home standard — solar-ready power, full CCTV and smart access, and a fully fitted kitchen.",
     overview: [
@@ -84,6 +88,10 @@ export const projects = [
     duration: "7 months",
     featured: true,
     cover: "/projects/terra/IMG_8335.png",
+    // Quick specs shown on the project card (beds · baths · parking).
+    beds: 5,
+    baths: 5,
+    cars: 2,
     summary:
       "A four-bedroom detached duplex with a BQ in Ogba, finished to a turnkey smart-home standard — solar-ready power, full CCTV and smart access, and a fully fitted kitchen.",
     overview: [
