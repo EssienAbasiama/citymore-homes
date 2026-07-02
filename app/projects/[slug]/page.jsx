@@ -135,10 +135,10 @@ export default function ProjectDetailPage({ params }) {
         </div>
       </section>
 
-      {/* Overview + scope */}
+      {/* Overview */}
       <section className="bg-bone py-20 md:py-28">
-        <div className="container-site grid gap-14 lg:grid-cols-[1.4fr_1fr] lg:gap-20">
-          <div>
+        <div className="container-site">
+          <div className="max-w-3xl">
             <Reveal className="eyebrow text-taupe-dark">The project</Reveal>
             <h2 className="mt-4 font-display text-3xl leading-tight md:text-5xl">
               <RevealText text="What we set out" />
@@ -154,6 +154,7 @@ export default function ProjectDetailPage({ params }) {
             </Reveal>
           </div>
 
+          {/* Scope of work — hidden for now
           <Reveal delay={0.15}>
             <div className="rounded-3xl border border-ink/10 bg-bone-light p-8 md:p-10">
               <h3 className="font-display text-xl">Scope of work</h3>
@@ -167,6 +168,7 @@ export default function ProjectDetailPage({ params }) {
               </ul>
             </div>
           </Reveal>
+          */}
         </div>
       </section>
 
@@ -222,9 +224,30 @@ export default function ProjectDetailPage({ params }) {
         </section>
       )}
 
+      {/* Plans / Drawings */}
+      {project.plans?.length > 0 && (
+        <section className="bg-bone py-20 md:py-28">
+          <div className="container-site">
+            <div className="mb-10 max-w-2xl">
+              <Reveal className="eyebrow text-taupe-dark">Drawings</Reveal>
+              <h2 className="mt-4 font-display text-3xl leading-tight md:text-5xl">
+                <RevealText text="Floor plans" />{" "}
+                <RevealText text="& elevations." delay={0.12} />
+              </h2>
+              <Reveal delay={0.2}>
+                <p className="mt-5 text-ink/60">
+                  Tap any drawing to view it full-size.
+                </p>
+              </Reveal>
+            </div>
+            <GalleryGrid items={project.plans} variant="plans" />
+          </div>
+        </section>
+      )}
+
       {/* Features & specification */}
       {project.features?.length > 0 && (
-        <section className="bg-bone py-20 md:py-28">
+        <section className="bg-bone-light py-20 md:py-28">
           <div className="container-site">
             <div className="mb-12 max-w-2xl">
               <Reveal className="eyebrow text-taupe-dark">Specification</Reveal>
@@ -256,27 +279,6 @@ export default function ProjectDetailPage({ params }) {
                 );
               })}
             </div>
-          </div>
-        </section>
-      )}
-
-      {/* Plans */}
-      {project.plans?.length > 0 && (
-        <section className="bg-bone-light py-20 md:py-28">
-          <div className="container-site">
-            <div className="mb-10 max-w-2xl">
-              <Reveal className="eyebrow text-taupe-dark">Drawings</Reveal>
-              <h2 className="mt-4 font-display text-3xl leading-tight md:text-5xl">
-                <RevealText text="Floor plans" />{" "}
-                <RevealText text="& elevations." delay={0.12} />
-              </h2>
-              <Reveal delay={0.2}>
-                <p className="mt-5 text-ink/60">
-                  Tap any drawing to view it full-size.
-                </p>
-              </Reveal>
-            </div>
-            <GalleryGrid items={project.plans} variant="plans" />
           </div>
         </section>
       )}

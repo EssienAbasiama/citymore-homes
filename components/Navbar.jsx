@@ -32,11 +32,11 @@ export default function Navbar() {
     setOpen(false);
   }, [pathname]);
 
-  // Pages with a dark hero behind the (transparent) navbar. Over these, the
-  // nav needs light text/icons to stay visible; once scrolled it gets a light
-  // background and switches back to dark. Other pages start on a light bg.
-  const darkHeroPage = pathname === "/" || /^\/projects\/[^/]+$/.test(pathname);
-  const overHero = darkHeroPage && !scrolled;
+  // Every page opens with a dark hero/header (the home Hero or the dark
+  // PageHeader), and the navbar is transparent until you scroll — so while it's
+  // transparent it needs light text/icons, then switches to dark once it gets
+  // its light background on scroll.
+  const overHero = !scrolled;
   // The drawer is dark, so its close (X) icon must stay light while open.
   const lightControls = overHero || open;
 

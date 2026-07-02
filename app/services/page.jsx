@@ -1,6 +1,6 @@
 "use client";
 
-import { Building2, Hammer, TrendingUp, Handshake } from "lucide-react";
+import { Building2, Hammer, TrendingUp, Handshake, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import PageHeader from "@/components/PageHeader";
 import { Reveal } from "@/components/Motion";
@@ -30,6 +30,12 @@ const services = [
     title: "Development advisory",
     body: "Own a property with potential? We help owners plan, finance, and manage their own development — from first feasibility study through to handover.",
     points: ["Feasibility study", "Design & planning", "Project management", "Handover"],
+  },
+  {
+    icon: Users,
+    title: "Joint venture",
+    body: "Partner with us on a shared development. You bring the land or the capital, we bring the expertise and delivery — and we build it together, with the risk and the returns shared on clear, agreed terms.",
+    points: ["Land or capital partnership", "Shared risk & reward", "Clear agreed terms", "Joint delivery"],
   },
 ];
 

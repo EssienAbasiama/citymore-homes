@@ -56,15 +56,10 @@ export default function ProjectCard({ project, index = 0 }) {
           </div>
         </div>
 
-        <div className="mt-5">
-          <div className="flex items-baseline justify-between gap-3">
-            <p className="text-sm leading-relaxed text-ink/60">{project.summary}</p>
-          </div>
-          <div className="mt-3 flex items-center gap-3 text-xs uppercase tracking-eyebrow text-taupe-dark">
-            <span>{project.type}</span>
-            <span className="h-1 w-1 rounded-full bg-taupe-dark/50" />
-            <span>{project.year}</span>
-          </div>
+        <div className="mt-4 flex items-center gap-3 text-xs uppercase tracking-eyebrow text-taupe-dark">
+          <span>{project.type}</span>
+          <span className="h-1 w-1 rounded-full bg-taupe-dark/50" />
+          <span>{project.year}</span>
         </div>
       </Link>
     </motion.article>
