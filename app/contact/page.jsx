@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Mail, Phone, MapPin, Check, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, Check, MessageCircle } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import { Reveal } from "@/components/Motion";
 
@@ -14,6 +14,9 @@ const interests = [
   "General",
 ];
 
+// WhatsApp number that contact-form messages open in (digits only, intl format).
+const WHATSAPP_NUMBER = "2349037555786";
+
 export default function ContactPage() {
   const [form, setForm] = useState({
     name: "",
@@ -23,8 +26,6 @@ export default function ContactPage() {
     message: "",
   });
   const [sent, setSent] = useState(false);
-  const [sending, setSending] = useState(false);
-  const [serverError, setServerError] = useState("");
   const [errors, setErrors] = useState({});
 
   const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
@@ -39,30 +40,25 @@ export default function ContactPage() {
     return Object.keys(err).length === 0;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!validate()) return;
-    setSending(true);
-    setServerError("");
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        setServerError(data.error || "Something went wrong. Please try again.");
-      } else {
-        setSent(true);
-      }
-    } catch {
-      setServerError(
-        "Network error. Please check your connection and try again.",
-      );
-    } finally {
-      setSending(false);
-    }
+    // Build the message and hand it off to WhatsApp with everything pre-filled.
+    const lines = [
+      `Hello CITYMORE HOMES, I'm ${form.name.trim()}.`,
+      "",
+      `Interested in: ${form.interest}`,
+      `Email: ${form.email.trim()}`,
+      form.phone.trim() ? `Phone: ${form.phone.trim()}` : null,
+      "",
+      form.message.trim(),
+    ].filter((line) => line !== null);
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+      lines.join("\n"),
+    )}`;
+    // Opened synchronously in the click handler so it isn't blocked as a popup.
+    window.open(url, "_blank", "noopener,noreferrer");
+    setSent(true);
   };
 
   return (
@@ -135,10 +131,12 @@ export default function ContactPage() {
                     >
                       <Check size={28} />
                     </motion.span>
-                    <h3 className="mt-6 font-display text-3xl">Message sent</h3>
+                    <h3 className="mt-6 font-display text-3xl">
+                      WhatsApp opened
+                    </h3>
                     <p className="mt-3 max-w-sm text-ink/60">
-                      Thank you — your message is on its way to our team. We'll
-                      be in touch within one working day.
+                      We've opened WhatsApp with your message ready to go — just
+                      tap send there and we'll reply within one working day.
                     </p>
                     <button
                       onClick={() => setSent(false)}
@@ -222,22 +220,15 @@ export default function ContactPage() {
                       />
                     </Field>
 
-                    {serverError && (
-                      <p className="text-sm text-red-700">{serverError}</p>
-                    )}
-
                     <button
                       type="submit"
-                      disabled={sending}
-                      className="btn-dark group w-full disabled:opacity-60"
+                      className="btn-dark group w-full"
                     >
-                      {sending ? "Sending…" : "Send message"}
-                      {!sending && (
-                        <ArrowRight
-                          size={18}
-                          className="transition-transform duration-300 group-hover:translate-x-1"
-                        />
-                      )}
+                      Send on WhatsApp
+                      <MessageCircle
+                        size={18}
+                        className="transition-transform duration-300 group-hover:translate-x-1"
+                      />
                     </button>
                   </motion.form>
                 )}
