@@ -140,13 +140,11 @@ export default function ProjectDetailPage({ params }) {
         <div className="container-site">
           <div className="max-w-3xl">
             <Reveal className="eyebrow text-taupe-dark">The project</Reveal>
-            <h2 className="mt-4 font-display text-3xl leading-tight md:text-5xl">
-              <RevealText text="What we set out" />
-              <br />
-              <RevealText text="to do." delay={0.12} />
+            <h2 className="mt-3 font-display text-3xl leading-tight md:text-4xl">
+              <RevealText text="What we set out to do." />
             </h2>
             <Reveal delay={0.2}>
-              <div className="mt-7 space-y-5 text-lg leading-relaxed text-ink/70">
+              <div className="mt-5 space-y-5 text-lg leading-relaxed text-ink/70">
                 {project.overview.map((para, i) => (
                   <p key={i}>{para}</p>
                 ))}
