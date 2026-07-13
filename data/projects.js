@@ -68,9 +68,9 @@ export const projects = [
       "/projects/the-nova/IMG_0968.PNG",
       "/projects/the-nova/IMG_0969.PNG",
     ],
-    plans: [
-      { src: "/projects/the-nova/front-elevation.png", caption: "Front Elevation" },
-    ],
+    // No drawings for this project — the Drawings section hides itself when
+    // `plans` is empty or absent.
+    plans: [],
     result:
       "Completed in seven months — a turnkey, smart-home duplex finished to a standard we're proud of.",
   },
