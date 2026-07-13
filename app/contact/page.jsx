@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Mail, Phone, MapPin, Check, MessageCircle } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import { Reveal } from "@/components/Motion";
+import { whatsappUrl, ENQUIRY_MESSAGE } from "@/lib/whatsapp";
 
 const interests = [
   "Buy a home",
@@ -13,9 +14,6 @@ const interests = [
   "Partnership",
   "General",
 ];
-
-// WhatsApp number that contact-form messages open in (digits only, intl format).
-const WHATSAPP_NUMBER = "2349037555786";
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -53,9 +51,7 @@ export default function ContactPage() {
       "",
       form.message.trim(),
     ].filter((line) => line !== null);
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-      lines.join("\n"),
-    )}`;
+    const url = whatsappUrl(lines.join("\n"));
     // Opened synchronously in the click handler so it isn't blocked as a popup.
     window.open(url, "_blank", "noopener,noreferrer");
     setSent(true);
@@ -92,6 +88,13 @@ export default function ContactPage() {
                 label="Phone"
                 value="+234 903 755 5786"
                 href="tel:+2349037555786"
+              />
+              <ContactRow
+                icon={MessageCircle}
+                label="WhatsApp"
+                value="Chat with us"
+                href={whatsappUrl(ENQUIRY_MESSAGE)}
+                external
               />
               <ContactRow
                 icon={MapPin}
@@ -271,7 +274,7 @@ function Field({ label, error, children }) {
   );
 }
 
-function ContactRow({ icon: Icon, label, value, href }) {
+function ContactRow({ icon: Icon, label, value, href, external }) {
   const content = (
     <div className="flex items-start gap-4">
       <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-ink/15">
@@ -291,6 +294,8 @@ function ContactRow({ icon: Icon, label, value, href }) {
       {href ? (
         <a
           href={href}
+          target={external ? "_blank" : undefined}
+          rel={external ? "noopener noreferrer" : undefined}
           className="group block transition-opacity hover:opacity-70"
         >
           {content}

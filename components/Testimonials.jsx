@@ -10,7 +10,7 @@ const testimonials = [
     quote:
       "We walked into a finished home that felt considered in every corner. You could tell it was built by people who cared — not flipped for a quick sale.",
     name: "Adaeze & Tunde O.",
-    role: "Bought a CITYMORE home, Ikoyi",
+    role: "Bought a CITYMORE home, Ogba",
   },
   {
     quote:

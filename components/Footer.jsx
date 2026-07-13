@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import Roofline from "./Roofline";
+import { whatsappUrl, ENQUIRY_MESSAGE } from "@/lib/whatsapp";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -62,8 +63,23 @@ export default function Footer() {
                   <Mail size={15} /> hello@citymorehomes.com
                 </a>
               </li>
-              <li className="inline-flex items-center gap-2 text-taupe">
-                <Phone size={15} /> +234 903 755 5786
+              <li>
+                <a
+                  href="tel:+2349037555786"
+                  className="link-wipe inline-flex items-center gap-2 text-taupe hover:text-bone"
+                >
+                  <Phone size={15} /> +234 903 755 5786
+                </a>
+              </li>
+              <li>
+                <a
+                  href={whatsappUrl(ENQUIRY_MESSAGE)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-wipe inline-flex items-center gap-2 text-taupe hover:text-bone"
+                >
+                  <MessageCircle size={15} /> Chat on WhatsApp
+                </a>
               </li>
               <li className="inline-flex items-start gap-2 text-taupe">
                 <MapPin size={15} className="mt-0.5" /> Ogba, Lagos, Nigeria

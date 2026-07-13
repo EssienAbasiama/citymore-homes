@@ -7,6 +7,7 @@ import { useRef } from "react";
 import { ArrowDown } from "lucide-react";
 import Roofline from "./Roofline";
 import { RevealText, Counter } from "./Motion";
+import { whatsappUrl, VIEWING_MESSAGE } from "@/lib/whatsapp";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -79,9 +80,14 @@ export default function Hero() {
           <Link href="/projects" className="btn-light">
             View projects
           </Link>
-          <Link href="/contact" className="btn-outline border-bone/40 text-bone hover:bg-bone hover:text-ink">
+          <a
+            href={whatsappUrl(VIEWING_MESSAGE)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline border-bone/40 text-bone hover:bg-bone hover:text-ink"
+          >
             Book a viewing
-          </Link>
+          </a>
         </motion.div>
 
         {/* Stat row */}
@@ -89,7 +95,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.3, duration: 0.8 }}
-          className="mt-16 grid max-w-2xl grid-cols-3 gap-6 border-t border-bone/15 pt-8"
+          className="mt-12 grid max-w-2xl grid-cols-3 gap-x-4 gap-y-6 border-t border-bone/15 pt-6 sm:mt-16 sm:gap-x-6 sm:pt-8"
         >
           <Stat value={<Counter to={7} suffix="+" />} label="Years developing" />
           <Stat value={<Counter to={6} suffix="" />} label="Homes transformed" />
@@ -118,9 +124,13 @@ export default function Hero() {
 
 function Stat({ value, label }) {
   return (
-    <div>
-      <p className="font-display text-3xl md:text-4xl">{value}</p>
-      <p className="mt-1 text-xs uppercase tracking-eyebrow text-bone/55">{label}</p>
+    <div className="min-w-0">
+      <p className="font-display text-2xl sm:text-3xl md:text-4xl">{value}</p>
+      {/* Tighter type + tracking on mobile: the full eyebrow tracking makes
+          words like "TRANSFORMED" wider than a third of a phone screen. */}
+      <p className="mt-1 break-words text-[10px] uppercase leading-snug tracking-[0.08em] text-bone/55 sm:text-xs sm:tracking-eyebrow">
+        {label}
+      </p>
     </div>
   );
 }

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { whatsappUrl, VIEWING_MESSAGE } from "@/lib/whatsapp";
 
 const links = [
   { href: "/", label: "Home" },
@@ -89,12 +90,14 @@ export default function Navbar() {
           </ul>
 
           <div className="hidden lg:block">
-            <Link
-              href="/contact"
+            <a
+              href={whatsappUrl(VIEWING_MESSAGE)}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`${overHero ? "btn-light" : "btn-dark"} text-sm`}
             >
               Book a viewing
-            </Link>
+            </a>
           </div>
 
           {/* Mobile toggle */}
@@ -139,9 +142,14 @@ export default function Navbar() {
               ))}
             </div>
             <div className="px-8 pb-12">
-              <Link href="/contact" className="btn-light w-full">
+              <a
+                href={whatsappUrl(VIEWING_MESSAGE)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-light block w-full text-center"
+              >
                 Book a viewing
-              </Link>
+              </a>
               <p className="mt-6 text-sm text-taupe">hello@citymorehomes.com</p>
             </div>
           </motion.div>
