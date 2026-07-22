@@ -65,8 +65,6 @@ export const projects = [
       "/projects/the-nova/IMG_0964.PNG",
       "/projects/the-nova/IMG_0965.PNG",
       "/projects/the-nova/IMG_0966.PNG",
-      "/projects/the-nova/IMG_0968.PNG",
-      "/projects/the-nova/IMG_0969.PNG",
     ],
     // No drawings for this project — the Drawings section hides itself when
     // `plans` is empty or absent.
