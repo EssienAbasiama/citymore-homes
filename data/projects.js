@@ -53,7 +53,7 @@ export const projects = [
       poster: "/projects/the-nova/walkthrough-poster.jpg",
       sources: [
         {
-          src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/ifako-ijaye-walkthrough.mp4",
+          src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/the-nova-walkthrough.mp4",
           type: "video/mp4",
         },
       ],
