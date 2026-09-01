@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
+import { ArrowUpRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { projects, projectStatuses } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
@@ -10,9 +12,16 @@ import CTA from "@/components/CTA";
 export default function ProjectsPage() {
   const [active, setActive] = useState("All");
   const filtered =
-    active === "All"
-      ? projects
-      : projects.filter((p) => p.status === active);
+    active === "All" ? projects : projects.filter((p) => p.status === active);
+  const highlightProject =
+    filtered.find((project) => project.slug === "overall") ||
+    filtered[0] ||
+    null;
+  const secondaryProjects = (
+    highlightProject
+      ? filtered.filter((project) => project.slug !== highlightProject.slug)
+      : filtered
+  ).filter(Boolean);
 
   return (
     <>
@@ -24,7 +33,6 @@ export default function ProjectsPage() {
 
       <section className="bg-bone py-16 md:py-24">
         <div className="container-site">
-          {/* Filter */}
           <div className="mb-12 flex flex-wrap gap-2.5">
             {projectStatuses.map((c) => (
               <button
@@ -46,10 +54,90 @@ export default function ProjectsPage() {
             ))}
           </div>
 
-          {/* Grid */}
-          <motion.div layout className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {highlightProject && (
+            <motion.div
+              layout
+              className="mb-12 overflow-hidden rounded-[2rem] border border-ink/10 bg-bone-light"
+            >
+              <div className="grid gap-6 p-4 md:p-6 lg:grid-cols-[1.5fr_1fr]">
+                <Link
+                  href={`/projects/${highlightProject.slug}`}
+                  className="group relative block overflow-hidden rounded-[1.5rem]"
+                >
+                  <div className="relative aspect-[16/11] overflow-hidden">
+                    <img
+                      src={highlightProject.cover}
+                      alt={highlightProject.name}
+                      className="h-full w-full object-cover transition-transform duration-700 ease-smooth group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/15 to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 p-6 text-bone md:p-8">
+                      <span className="inline-flex rounded-full border border-bone/40 bg-ink/30 px-3 py-1 text-[10px] uppercase tracking-eyebrow">
+                        {highlightProject.status}
+                      </span>
+                      <h3 className="mt-4 font-display text-3xl leading-tight md:text-5xl">
+                        {highlightProject.name}
+                      </h3>
+                      <p className="mt-3 max-w-lg text-sm text-bone/80 md:text-base">
+                        {highlightProject.tagline}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+
+                <div className="flex flex-col justify-between rounded-[1.5rem] bg-bone p-6 md:p-8">
+                  <div>
+                    <p className="eyebrow text-taupe-dark">Featured</p>
+                    <h4 className="mt-3 font-display text-2xl leading-tight md:text-3xl">
+                      {highlightProject.name}
+                    </h4>
+                    <p className="mt-4 text-base leading-relaxed text-ink/70">
+                      {highlightProject.summary}
+                    </p>
+                  </div>
+
+                  <div className="mt-8 space-y-4">
+                    {highlightProject.stats?.slice(0, 3).map((stat) => (
+                      <div
+                        key={stat.label}
+                        className="flex items-center justify-between border-b border-ink/10 pb-2.5"
+                      >
+                        <span className="text-xs uppercase tracking-eyebrow text-ink/50">
+                          {stat.label}
+                        </span>
+                        <span className="font-medium text-ink">
+                          {stat.value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Link
+                    href={`/projects/${highlightProject.slug}`}
+                    className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-ink transition-opacity hover:opacity-80"
+                  >
+                    View project <ArrowUpRight size={16} />
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {secondaryProjects.length > 0 && (
+            <div className="mb-8">
+              <p className="eyebrow text-taupe-dark">Other buildings</p>
+              <h3 className="mt-2 font-display text-3xl leading-tight md:text-4xl">
+                Explore the remaining blocks
+              </h3>
+            </div>
+          )}
+
+          <motion.div
+            layout
+            className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+          >
             <AnimatePresence mode="popLayout">
-              {filtered.map((p, i) => (
+              {secondaryProjects.map((p, i) => (
                 <motion.div
                   key={p.slug}
                   layout
