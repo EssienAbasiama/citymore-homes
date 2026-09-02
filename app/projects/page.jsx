@@ -16,7 +16,9 @@ export default function ProjectsPage() {
   const filtered =
     active === "All"
       ? topLevelProjects
-      : topLevelProjects.filter((project) => project.status === active);
+      : topLevelProjects.filter(
+          (project) => project.status === active || project.slug === "overall",
+        );
 
   const highlightProject =
     filtered.find((project) => project.slug === "overall") ||

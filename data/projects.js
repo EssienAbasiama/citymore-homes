@@ -162,10 +162,10 @@ export const projects = [
     cover: "/projects/overall/WhatsApp%20Image%202026-08-29%20at%207.12.38%20PM%20(1).jpeg",
     beds: 4,
     baths: 4,
-    cars: 2,
+    cars: 3,
     children: ["building-a", "building-b", "building-c"],
     summary:
-      "A flagship residential development concept with a primary highlight and supporting building phases. This overall view is designed to showcase the master vision before the individual buildings are explored in detail.",
+      "A flagship residential development concept in a serene estate with 24/7 security, with a primary highlight and supporting building phases. This overall view is designed to showcase the master vision before the individual buildings are explored in detail.",
     overview: [
       "This overall concept is the master overview for the upcoming and ongoing development pipeline.",
       "The page is intentionally structured to give this flagship project the main spotlight while the remaining buildings sit beneath it as separate, viewable sections for deeper exploration.",
@@ -178,8 +178,8 @@ export const projects = [
     ],
     stats: [
       { label: "Phase", value: "Ongoing" },
-      { label: "Buildings", value: "4" },
-      { label: "Location", value: "Lagos" },
+      { label: "Buildings", value: "3" },
+      { label: "Location", value: "Ogba, Lagos" },
       { label: "Status", value: "Live" },
     ],
     features: [
