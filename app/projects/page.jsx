@@ -11,17 +11,28 @@ import CTA from "@/components/CTA";
 
 export default function ProjectsPage() {
   const [active, setActive] = useState("All");
+  const topLevelProjects = projects.filter((project) => !project.parentProject);
+
   const filtered =
-    active === "All" ? projects : projects.filter((p) => p.status === active);
+    active === "All"
+      ? topLevelProjects
+      : topLevelProjects.filter((project) => project.status === active);
+
   const highlightProject =
     filtered.find((project) => project.slug === "overall") ||
     filtered[0] ||
     null;
-  const secondaryProjects = (
-    highlightProject
-      ? filtered.filter((project) => project.slug !== highlightProject.slug)
-      : filtered
-  ).filter(Boolean);
+
+  const secondaryProjects =
+    active === "Ongoing" || active === "Upcoming"
+      ? projects.filter(
+          (project) =>
+            project.parentProject === "overall" && project.status === active,
+        )
+      : (highlightProject
+          ? filtered.filter((project) => project.slug !== highlightProject.slug)
+          : filtered
+        ).filter(Boolean);
 
   return (
     <>

@@ -8,6 +8,7 @@ import { Reveal, RevealText } from "./Motion";
 
 export default function FeaturedProjects() {
   const featured = [...projects]
+    .filter((project) => !project.parentProject)
     .sort(
       (a, b) =>
         Number(b.featured) - Number(a.featured) || a.name.localeCompare(b.name),
