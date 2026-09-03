@@ -11,26 +11,27 @@ import CTA from "@/components/CTA";
 
 export default function ProjectsPage() {
   const [active, setActive] = useState("All");
-  const topLevelProjects = projects.filter((project) => !project.parentProject);
+  const topLevelProjects = projects
+    .filter((project) => !project.parentProject)
+    .sort((a, b) => {
+      if (a.slug === "project-triad") return -1;
+      if (b.slug === "project-triad") return 1;
+      return 0;
+    });
 
   const filtered =
     active === "All"
       ? topLevelProjects
-      : topLevelProjects.filter(
-          (project) => project.status === active || project.slug === "overall",
-        );
+      : topLevelProjects.filter((project) => project.status === active);
 
   const highlightProject =
-    filtered.find((project) => project.slug === "overall") ||
+    filtered.find((project) => project.slug === "project-triad") ||
     filtered[0] ||
     null;
 
   const secondaryProjects =
-    active === "Ongoing" || active === "Upcoming"
-      ? projects.filter(
-          (project) =>
-            project.parentProject === "overall" && project.status === active,
-        )
+    active === "Completed"
+      ? filtered
       : (highlightProject
           ? filtered.filter((project) => project.slug !== highlightProject.slug)
           : filtered
@@ -67,7 +68,7 @@ export default function ProjectsPage() {
             ))}
           </div>
 
-          {highlightProject && (
+          {highlightProject && active !== "Completed" && (
             <motion.div
               layout
               className="mb-12 overflow-hidden rounded-[2rem] border border-ink/10 bg-bone-light"
@@ -164,6 +165,18 @@ export default function ProjectsPage() {
               ))}
             </AnimatePresence>
           </motion.div>
+
+          {active === "Completed" && (
+            <div className="mt-16 border-t border-ink/10 pt-10">
+              <p className="eyebrow text-taupe-dark">Current development</p>
+              <Link
+                href="/projects/project-triad"
+                className="mt-3 inline-flex items-center gap-2 font-display text-2xl text-ink transition-opacity hover:opacity-70 md:text-3xl"
+              >
+                Explore Project Triad <ArrowUpRight size={20} />
+              </Link>
+            </div>
+          )}
 
           {filtered.length === 0 && (
             <p className="py-20 text-center text-ink/50">

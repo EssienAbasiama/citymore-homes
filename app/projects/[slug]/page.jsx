@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   ArrowLeft,
+  Bed,
   MapPin,
   Calendar,
   Clock,
@@ -23,6 +24,7 @@ import { Reveal, RevealText } from "@/components/Motion";
 import Roofline from "@/components/Roofline";
 import GalleryGrid from "@/components/GalleryGrid";
 import ProjectVideo from "@/components/ProjectVideo";
+import ProjectCard from "@/components/ProjectCard";
 import CTA from "@/components/CTA";
 
 export function generateStaticParams() {
@@ -41,6 +43,10 @@ export function generateMetadata({ params }) {
 export default function ProjectDetailPage({ params }) {
   const project = getProject(params.slug);
   if (!project) notFound();
+
+  const childProjects = (project.children || [])
+    .map((slug) => getProject(slug))
+    .filter(Boolean);
 
   const meta = [
     { icon: MapPin, label: "Location", value: project.location },
@@ -243,6 +249,32 @@ export default function ProjectDetailPage({ params }) {
         </section>
       )}
 
+      {childProjects.length > 0 && (
+        <section className="bg-bone py-20 md:py-28">
+          <div className="container-site">
+            <div className="mb-10 max-w-2xl">
+              <Reveal className="eyebrow text-taupe-dark">
+                Inside Project Triad
+              </Reveal>
+              <h2 className="mt-4 font-display text-3xl leading-tight md:text-5xl">
+                <RevealText text="Three distinct buildings." />
+              </h2>
+              <Reveal delay={0.2}>
+                <p className="mt-5 text-ink/60">
+                  Explore each building for its own description, gallery, and
+                  specifications.
+                </p>
+              </Reveal>
+            </div>
+            <div className="grid gap-8 md:grid-cols-3">
+              {childProjects.map((child, i) => (
+                <ProjectCard key={child.slug} project={child} index={i} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Features & specification */}
       {project.features?.length > 0 && (
         <section className="bg-bone-light py-20 md:py-28">
@@ -286,7 +318,11 @@ export default function ProjectDetailPage({ params }) {
         <section className="bg-bone-light py-20 md:py-28">
           <div className="container-site max-w-3xl text-center">
             <Reveal className="flex justify-center">
-              <Roofline color="#0A0A0A" className="mb-8 h-14 w-40" strokeWidth={2} />
+              <Roofline
+                color="#0A0A0A"
+                className="mb-8 h-14 w-40"
+                strokeWidth={2}
+              />
             </Reveal>
             <Reveal className="eyebrow text-taupe-dark">The outcome</Reveal>
             <p className="mt-6 font-display text-2xl leading-snug md:text-4xl">
