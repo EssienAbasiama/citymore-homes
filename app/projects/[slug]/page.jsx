@@ -18,8 +18,11 @@ import {
   ChefHat,
   Car,
   Check,
+  MessageCircle,
+  Mail,
 } from "lucide-react";
 import { projects, getProject } from "@/data/projects";
+import { whatsappUrl } from "@/lib/whatsapp";
 import { Reveal, RevealText } from "@/components/Motion";
 import Roofline from "@/components/Roofline";
 import GalleryGrid from "@/components/GalleryGrid";
@@ -48,6 +51,15 @@ export default function ProjectDetailPage({ params }) {
     .map((slug) => getProject(slug))
     .filter(Boolean);
 
+  // The Triad and its three homes get their own enquiry block mid-page.
+  const isTriad =
+    project.slug === "the-triad" || project.parentProject === "the-triad";
+  const triadEnquiry = whatsappUrl(
+    `Hello CITYMORE HOMES, I'd like to enquire about ${project.name}${
+      project.parentProject === "the-triad" ? " in The Triad" : ""
+    }.`,
+  );
+
   const meta = [
     { icon: MapPin, label: "Location", value: project.location },
     { icon: Tag, label: "Type", value: project.type },
@@ -59,6 +71,7 @@ export default function ProjectDetailPage({ params }) {
     typeof src === "string" ? { src } : src,
   );
   const featureIcons = {
+    Bed,
     Sun,
     Lightbulb,
     Cctv,
@@ -254,7 +267,7 @@ export default function ProjectDetailPage({ params }) {
           <div className="container-site">
             <div className="mb-10 max-w-2xl">
               <Reveal className="eyebrow text-taupe-dark">
-                Inside Project Triad
+                Inside The Triad
               </Reveal>
               <h2 className="mt-4 font-display text-3xl leading-tight md:text-5xl">
                 <RevealText text="Three distinct buildings." />
@@ -271,6 +284,41 @@ export default function ProjectDetailPage({ params }) {
                 <ProjectCard key={child.slug} project={child} index={i} />
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* Triad enquiry */}
+      {isTriad && (
+        <section className="bg-ink py-20 text-bone md:py-24">
+          <div className="container-site max-w-3xl text-center">
+            <Reveal className="eyebrow text-taupe">Enquiries</Reveal>
+            <h2 className="mt-5 font-display text-3xl leading-tight md:text-5xl">
+              <RevealText text="Your place in The Triad awaits." />
+            </h2>
+            <Reveal delay={0.2}>
+              <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-bone/70">
+                Get in touch for enquiries — and to make an offer.
+              </p>
+            </Reveal>
+            <Reveal delay={0.3}>
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+                <a
+                  href={triadEnquiry}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-light"
+                >
+                  <MessageCircle size={17} /> Chat on WhatsApp
+                </a>
+                <Link
+                  href="/contact"
+                  className="btn border border-bone/35 text-bone hover:border-bone hover:bg-bone hover:text-ink"
+                >
+                  <Mail size={17} /> Start a conversation
+                </Link>
+              </div>
+            </Reveal>
           </div>
         </section>
       )}
@@ -325,7 +373,7 @@ export default function ProjectDetailPage({ params }) {
               />
             </Reveal>
             <Reveal className="eyebrow text-taupe-dark">The outcome</Reveal>
-            <p className="mt-6 font-display text-2xl leading-snug md:text-4xl">
+            <p className="mt-6 whitespace-pre-line font-display text-2xl leading-snug md:text-4xl">
               {project.result}
             </p>
           </div>

@@ -14,8 +14,8 @@ export default function ProjectsPage() {
   const topLevelProjects = projects
     .filter((project) => !project.parentProject)
     .sort((a, b) => {
-      if (a.slug === "project-triad") return -1;
-      if (b.slug === "project-triad") return 1;
+      if (a.slug === "the-triad") return -1;
+      if (b.slug === "the-triad") return 1;
       return 0;
     });
 
@@ -25,7 +25,7 @@ export default function ProjectsPage() {
       : topLevelProjects.filter((project) => project.status === active);
 
   const highlightProject =
-    filtered.find((project) => project.slug === "project-triad") ||
+    filtered.find((project) => project.slug === "the-triad") ||
     filtered[0] ||
     null;
 
@@ -170,10 +170,10 @@ export default function ProjectsPage() {
             <div className="mt-16 border-t border-ink/10 pt-10">
               <p className="eyebrow text-taupe-dark">Current development</p>
               <Link
-                href="/projects/project-triad"
+                href="/projects/the-triad"
                 className="mt-3 inline-flex items-center gap-2 font-display text-2xl text-ink transition-opacity hover:opacity-70 md:text-3xl"
               >
-                Explore Project Triad <ArrowUpRight size={20} />
+                Explore The Triad <ArrowUpRight size={20} />
               </Link>
             </div>
           )}

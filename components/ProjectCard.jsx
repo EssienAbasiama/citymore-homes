@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { MapPin, ArrowUpRight, Bed, Bath, Car } from "lucide-react";
+import { MapPin, ArrowUpRight, Bed, Bath, Car, Home } from "lucide-react";
 
 const statusStyles = {
   Completed: "bg-bone/95 text-ink",
@@ -45,7 +45,10 @@ export default function ProjectCard({ project, index = 0 }) {
 
           <div className="absolute inset-x-0 bottom-0 p-5 text-bone">
             <p className="font-display text-2xl leading-snug">{project.name}</p>
-            {(project.beds != null || project.baths != null || project.cars != null) && (
+            {(project.beds != null ||
+              project.baths != null ||
+              project.cars != null ||
+              project.bq) && (
               <div className="mt-2 flex items-center gap-4 text-xs text-bone/90">
                 {project.beds != null && (
                   <span className="inline-flex items-center gap-1.5">
@@ -60,6 +63,11 @@ export default function ProjectCard({ project, index = 0 }) {
                 {project.cars != null && (
                   <span className="inline-flex items-center gap-1.5">
                     <Car size={15} /> {project.cars}
+                  </span>
+                )}
+                {project.bq && (
+                  <span className="inline-flex items-center gap-1.5">
+                    <Home size={15} /> BQ
                   </span>
                 )}
               </div>
