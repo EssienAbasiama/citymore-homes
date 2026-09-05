@@ -9,11 +9,11 @@ import Roofline from "./Roofline";
 const values = [
   {
     title: "Vision",
-    body: "We see what a tired or overlooked property could become — and we have the team to make it real.",
+    body: "Our goal is simple: to build homes people genuinely love to live in.",
   },
   {
     title: "Craft",
-    body: "Every renovation is detailed to a standard we would happily live with ourselves.",
+    body: "A home is the most personal thing most people will ever buy, and it deserves to be built with care.",
   },
   {
     title: "Partnership",
@@ -55,10 +55,9 @@ export default function Editorial() {
             </h2>
             <Reveal delay={0.2}>
               <p className="mt-7 max-w-lg text-lg leading-relaxed text-bone/70">
-                CITYMORE HOMES LIMITED was founded on a simple belief: a home is the most
-                personal thing most people will ever buy, and it deserves to be built
-                with care. We acquire properties with sharp market judgement and
-                transform them with genuine attention to detail.
+                CITYMORE HOMES LIMITED was founded on a simple belief: creating
+                thoughtfully designed homes for modern living — homes that
+                combine quality, comfort and character.
               </p>
             </Reveal>
 

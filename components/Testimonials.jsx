@@ -8,19 +8,19 @@ import { Reveal } from "./Motion";
 const testimonials = [
   {
     quote:
-      "We walked into a finished home that felt considered in every corner. You could tell it was built by people who cared — not flipped for a quick sale.",
+      "We walked into a finished home that felt considered in every corner. You could tell it was built by people who cared — not thrown up for a quick sale.",
     name: "Adaeze & Tunde O.",
     role: "Bought a CITYMORE home, Ogba",
   },
   {
     quote:
-      "They took a tired property I'd nearly given up on and managed the whole development — design, build, the lot. I just watched it come back to life.",
+      "They built our home from the ground up and carried every stage — design, build, handover. We watched it rise from foundation to finish, and it landed on time.",
     name: "Margaret E.",
-    role: "Development advisory client",
+    role: "Homeowner, Lagos",
   },
   {
     quote:
-      "I've co-funded two projects with CITYMORE. The underwriting was honest, the updates were regular, and the returns landed exactly where they said they would.",
+      "I've co-funded two builds with CITYMORE. The numbers were honest, the site updates were regular, and the returns landed exactly where they said they would.",
     name: "Daniel A.",
     role: "Investor, Lagos",
   },

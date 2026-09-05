@@ -20,6 +20,7 @@ import {
   Check,
   MessageCircle,
   Mail,
+  BadgeCheck,
 } from "lucide-react";
 import { projects, getProject } from "@/data/projects";
 import { whatsappUrl } from "@/lib/whatsapp";
@@ -113,7 +114,10 @@ export default function ProjectDetailPage({ params }) {
           >
             <ArrowLeft size={16} /> All projects
           </Link>
-          <p className="eyebrow text-taupe">{project.status}</p>
+          <p className="eyebrow inline-flex items-center gap-1.5 text-taupe">
+            {project.status === "Sold" && <BadgeCheck size={15} />}
+            {project.status}
+          </p>
           <h1 className="mt-4 max-w-4xl font-display text-5xl leading-[1.02] md:text-7xl">
             <RevealText text={project.name} />
           </h1>

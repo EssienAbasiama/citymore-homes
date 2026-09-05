@@ -3,10 +3,18 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { MapPin, ArrowUpRight, Bed, Bath, Car, Home } from "lucide-react";
+import {
+  MapPin,
+  ArrowUpRight,
+  Bed,
+  Bath,
+  Car,
+  Home,
+  BadgeCheck,
+} from "lucide-react";
 
 const statusStyles = {
-  Completed: "bg-bone/95 text-ink",
+  Sold: "bg-bone/95 text-ink",
   Ongoing: "bg-taupe-dark text-bone",
   Upcoming: "bg-ink/85 text-bone",
 };
@@ -32,10 +40,11 @@ export default function ProjectCard({ project, index = 0 }) {
           <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/0 to-ink/0 opacity-80" />
 
           <span
-            className={`absolute left-4 top-4 rounded-full px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-eyebrow ${
-              statusStyles[project.status] || statusStyles.Completed
+            className={`absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-eyebrow ${
+              statusStyles[project.status] || statusStyles.Sold
             }`}
           >
+            {project.status === "Sold" && <BadgeCheck size={13} />}
             {project.status}
           </span>
 

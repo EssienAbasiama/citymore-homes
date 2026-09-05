@@ -7,12 +7,16 @@ import ProjectCard from "./ProjectCard";
 import { Reveal, RevealText } from "./Motion";
 
 export default function FeaturedProjects() {
+  // The Triad is the live development — it leads, then the rest by name.
   const featured = [...projects]
     .filter((project) => !project.parentProject)
-    .sort(
-      (a, b) =>
-        Number(b.featured) - Number(a.featured) || a.name.localeCompare(b.name),
-    )
+    .sort((a, b) => {
+      if (a.slug === "the-triad") return -1;
+      if (b.slug === "the-triad") return 1;
+      return (
+        Number(b.featured) - Number(a.featured) || a.name.localeCompare(b.name)
+      );
+    })
     .slice(0, 4);
 
   return (

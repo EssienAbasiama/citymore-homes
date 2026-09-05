@@ -26,7 +26,7 @@ export const projects = [
     name: "The Nova",
     tagline: "Modern Living, Timeless Value",
     location: "Ogba, Lagos",
-    status: "Completed",
+    status: "Sold",
     type: "Detached Duplex",
     year: "2025",
     duration: "7 months",
@@ -51,7 +51,7 @@ export const projects = [
       { label: "Bedrooms", value: "4 + BQ" },
       { label: "Build time", value: "7 months" },
       { label: "Power", value: "Solar-ready" },
-      { label: "Status", value: "Completed" },
+      { label: "Status", value: "Sold" },
     ],
     features: [
       { icon: "Sun", title: "Solar-ready power", body: "10.2kVA inverter and 15kWh lithium battery for true off-grid running." },
@@ -66,7 +66,7 @@ export const projects = [
       poster: "/projects/the-nova/walkthrough-poster.jpg",
       sources: [
         {
-          src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/the-nova-walkthrough.mp4",
+          src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/the-nova-walkthrough-2.mp4",
           type: "video/mp4",
         },
       ],
@@ -78,6 +78,9 @@ export const projects = [
       "/projects/the-nova/IMG_0964.PNG",
       "/projects/the-nova/IMG_0965.PNG",
       "/projects/the-nova/IMG_0966.PNG",
+      "/projects/the-nova/nova-1163.jpg",
+      "/projects/the-nova/nova-1169.jpg",
+      "/projects/the-nova/nova-1173.jpg",
     ],
     plans: [],
     result:
@@ -88,7 +91,7 @@ export const projects = [
     name: "Terra Living",
     tagline: "Grounded in Quality",
     location: "Ogba, Lagos",
-    status: "Completed",
+    status: "Sold",
     type: "Detached Duplex",
     year: "2025",
     duration: "7 months",
@@ -113,7 +116,7 @@ export const projects = [
       { label: "Bedrooms", value: "4 + BQ" },
       { label: "Bathrooms", value: "5" },
       { label: "Power", value: "Solar-ready" },
-      { label: "Status", value: "Completed" },
+      { label: "Status", value: "Sold" },
     ],
     features: [
       { icon: "Sun", title: "Solar-ready power", body: "10.2kVA inverter and 15kWh lithium battery for true off-grid running." },
@@ -151,12 +154,10 @@ export const projects = [
       "/projects/terra/IMG_0983.PNG",
       "/projects/terra/IMG_0978.PNG",
       "/projects/terra/IMG_0981.PNG",
-      "/projects/terra/IMG_0986.PNG",
+      "/projects/terra/terra-1173.jpg",
       "/projects/terra/IMG_8335.png",
     ],
     plans: [
-      { src: "/projects/terra/IMG_0918.png", caption: "Ground Floor" },
-      { src: "/projects/terra/IMG_0919.png", caption: "Upper Floor" },
       { src: "/projects/terra/IMG_8338.png", caption: "Front Elevation" },
       { src: "/projects/terra/IMG_8344.png", caption: "Back Elevation" },
       { src: "/projects/terra/IMG_8342.png", caption: "Left Elevation" },
@@ -175,7 +176,7 @@ export const projects = [
     year: "2026-2027",
     duration: "8 months",
     featured: true,
-    cover: "/projects/overall/WhatsApp%20Image%202026-08-29%20at%207.12.38%20PM%20(1).jpeg",
+    cover: "/projects/the-triad/the-triad-1.jpeg",
     beds: 4,
     baths: 4,
     cars: 3,
@@ -196,14 +197,14 @@ export const projects = [
     ],
     stats: [
       { label: "Phase", value: "Ongoing" },
-      { label: "Buildings", value: "3" },
+      { label: "Units", value: "3" },
+      { label: "Availability", value: "2 Left" },
       { label: "Location", value: "Ogba, Lagos" },
-      { label: "Status", value: "Live" },
     ],
     features: triadFeatures,
     gallery: [
-      "/projects/overall/WhatsApp%20Image%202026-08-29%20at%207.12.38%20PM%20(1).jpeg",
-      "/projects/overall/WhatsApp%20Image%202026-08-29%20at%207.12.38%20PM.jpeg",
+      "/projects/the-triad/the-triad-1.jpeg",
+      "/projects/the-triad/the-triad-2.jpeg",
     ],
     plans: [],
     result:
@@ -220,7 +221,7 @@ export const projects = [
     duration: "8 months",
     featured: false,
     parentProject: "the-triad",
-    cover: "/projects/buildingA/WhatsApp%20Image%202026-08-29%20at%207.09.52%20PM%20(2).jpeg",
+    cover: "/projects/temi/temi-2.jpeg",
     beds: 4,
     baths: 4,
     cars: 2,
@@ -245,9 +246,10 @@ export const projects = [
     ],
     features: triadFeatures,
     gallery: [
-      "/projects/buildingA/WhatsApp%20Image%202026-08-29%20at%207.09.52%20PM%20(1).jpeg",
-      "/projects/buildingA/WhatsApp%20Image%202026-08-29%20at%207.09.52%20PM%20(2).jpeg",
-      "/projects/buildingA/WhatsApp%20Image%202026-08-29%20at%207.09.52%20PM.jpeg",
+      "/projects/temi/temi-1.jpeg",
+      "/projects/temi/temi-2.jpeg",
+      "/projects/temi/temi-3.jpeg",
+      "/projects/temi/temi-4.jpeg",
     ],
     plans: [],
     result: "TEMI — A home that feels truly yours.",
@@ -263,7 +265,7 @@ export const projects = [
     duration: "8 months",
     featured: false,
     parentProject: "the-triad",
-    cover: "/projects/buildingB/WhatsApp%20Image%202026-08-29%20at%207.11.16%20PM.jpeg",
+    cover: "/projects/remi/remi-3.jpeg",
     beds: 4,
     baths: 4,
     cars: 2,
@@ -288,9 +290,9 @@ export const projects = [
     ],
     features: triadFeatures,
     gallery: [
-      "/projects/buildingB/WhatsApp%20Image%202026-08-29%20at%207.11.16%20PM%20(1).jpeg",
-      "/projects/buildingB/WhatsApp%20Image%202026-08-29%20at%207.11.16%20PM%20(2).jpeg",
-      "/projects/buildingB/WhatsApp%20Image%202026-08-29%20at%207.11.16%20PM.jpeg",
+      "/projects/remi/remi-1.jpeg",
+      "/projects/remi/remi-2.jpeg",
+      "/projects/remi/remi-3.jpeg",
     ],
     plans: [],
     result: "RẸ́MI — A residence created around effortless living.",
@@ -306,7 +308,7 @@ export const projects = [
     duration: "8 months",
     featured: false,
     parentProject: "the-triad",
-    cover: "/projects/buildingC/WhatsApp%20Image%202026-08-29%20at%207.12.06%20PM%20(2).jpeg",
+    cover: "/projects/imisi/imisi-2.jpeg",
     beds: 4,
     baths: 4,
     cars: 2,
@@ -331,16 +333,16 @@ export const projects = [
     ],
     features: triadFeatures,
     gallery: [
-      "/projects/buildingC/WhatsApp%20Image%202026-08-29%20at%207.12.06%20PM%20(1).jpeg",
-      "/projects/buildingC/WhatsApp%20Image%202026-08-29%20at%207.12.06%20PM%20(2).jpeg",
-      "/projects/buildingC/WhatsApp%20Image%202026-08-29%20at%207.12.06%20PM.jpeg",
+      "/projects/imisi/imisi-1.jpeg",
+      "/projects/imisi/imisi-2.jpeg",
+      "/projects/imisi/imisi-3.jpeg",
     ],
     plans: [],
     result: "ÌMÍSÍ — A home designed to inspire the way you live.",
   },
 ];
 
-export const projectStatuses = ["All", "Completed", "Ongoing", "Upcoming"];
+export const projectStatuses = ["All", "Sold", "Ongoing", "Upcoming"];
 
 export function getProject(slug) {
   return projects.find((p) => p.slug === slug);

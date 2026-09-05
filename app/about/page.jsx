@@ -34,7 +34,7 @@ const team = [
 ];
 
 const stats = [
-  { to: 7, suffix: "+", label: "Years developing" },
+  { to: 5, suffix: "+", label: "Years developing" },
   { to: 6, suffix: "", label: "Homes transformed" },
   { to: 1, suffix: "", label: "City of operation" },
   { to: 98, suffix: "%", label: "Repeat partners" },

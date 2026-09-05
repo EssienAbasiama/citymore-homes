@@ -30,7 +30,7 @@ export default function ProjectsPage() {
     null;
 
   const secondaryProjects =
-    active === "Completed"
+    active === "Sold"
       ? filtered
       : (highlightProject
           ? filtered.filter((project) => project.slug !== highlightProject.slug)
@@ -68,7 +68,7 @@ export default function ProjectsPage() {
             ))}
           </div>
 
-          {highlightProject && active !== "Completed" && (
+          {highlightProject && active !== "Sold" && (
             <motion.div
               layout
               className="mb-12 overflow-hidden rounded-[2rem] border border-ink/10 bg-bone-light"
@@ -166,7 +166,7 @@ export default function ProjectsPage() {
             </AnimatePresence>
           </motion.div>
 
-          {active === "Completed" && (
+          {active === "Sold" && (
             <div className="mt-16 border-t border-ink/10 pt-10">
               <p className="eyebrow text-taupe-dark">Current development</p>
               <Link
