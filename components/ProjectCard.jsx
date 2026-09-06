@@ -15,6 +15,8 @@ import {
 
 const statusStyles = {
   Sold: "bg-bone/95 text-ink",
+  Available: "bg-bone/95 text-ink",
+  Reserved: "bg-ink/85 text-bone",
   Ongoing: "bg-taupe-dark text-bone",
   Upcoming: "bg-ink/85 text-bone",
 };
@@ -45,6 +47,9 @@ export default function ProjectCard({ project, index = 0 }) {
             }`}
           >
             {project.status === "Sold" && <BadgeCheck size={13} />}
+            {project.status === "Available" && (
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            )}
             {project.status}
           </span>
 

@@ -105,7 +105,7 @@ export default function ProjectsPage() {
                     <h4 className="mt-3 font-display text-2xl leading-tight md:text-3xl">
                       {highlightProject.name}
                     </h4>
-                    <p className="mt-4 text-base leading-relaxed text-ink/70">
+                    <p className="mt-4 whitespace-pre-line text-base leading-relaxed text-ink/70">
                       {highlightProject.summary}
                     </p>
                   </div>
