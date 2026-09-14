@@ -21,6 +21,7 @@ import {
   MessageCircle,
   Mail,
   BadgeCheck,
+  Ruler,
 } from "lucide-react";
 import { projects, getProject } from "@/data/projects";
 import { whatsappUrl } from "@/lib/whatsapp";
@@ -65,7 +66,10 @@ export default function ProjectDetailPage({ params }) {
   const meta = [
     { icon: MapPin, label: "Location", value: project.location },
     { icon: Tag, label: "Type", value: project.type },
-    { icon: Calendar, label: "Year", value: project.year },
+    // Plots carry a land size; everything else still shows the build year.
+    project.landSize
+      ? { icon: Ruler, label: "Land size", value: project.landSize }
+      : { icon: Calendar, label: "Year", value: project.year },
     { icon: Clock, label: "Duration", value: project.duration },
   ];
 

@@ -59,6 +59,22 @@ export default function ProjectCard({ project, index = 0 }) {
 
           <div className="absolute inset-x-0 bottom-0 p-5 text-bone">
             <p className="font-display text-2xl leading-snug">{project.name}</p>
+            {project.cardSubtitle?.length > 0 && (
+              <div className="mt-1.5 space-y-0.5">
+                {project.cardSubtitle.map((line, i) => (
+                  <p
+                    key={i}
+                    className={
+                      i === 0
+                        ? "text-xs font-medium uppercase tracking-[0.18em] text-bone/95"
+                        : "text-xs text-bone/70"
+                    }
+                  >
+                    {line}
+                  </p>
+                ))}
+              </div>
+            )}
             {(project.beds != null ||
               project.baths != null ||
               project.cars != null ||

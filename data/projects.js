@@ -181,6 +181,8 @@ export const projects = [
     baths: 4,
     cars: 3,
     bq: true,
+    // Shown on the card between the name and the icon row.
+    cardSubtitle: ["TEMI | RẸ́MI | ÌMÍSÍ", "Mine. Comfort. Inspiration"],
     children: ["temi", "remi", "imisi"],
     summary:
       "Introducing The Triad — an exclusive collection of three beautifully crafted 4-bedroom detached duplexes with BQ, nestled within a serene estate. Featuring Smart Home Automation and Solar Powered living.\n\nTEMI | RẸ́MI | ÌMÍSÍ\nMine. Comfort. Inspiration",
@@ -226,6 +228,7 @@ export const projects = [
     baths: 4,
     cars: 2,
     bq: true,
+    landSize: "248 sqm",
     summary:
       "Temi, meaning “mine” or “belongs to me,” represents the feeling of finally coming home to something truly yours.",
     overview: [
@@ -270,6 +273,7 @@ export const projects = [
     baths: 4,
     cars: 2,
     bq: true,
+    landSize: "218 sqm",
     summary:
       "Rẹ́mi, a name associated with comfort and ease. A residence created around effortless living.",
     overview: [
@@ -313,6 +317,7 @@ export const projects = [
     baths: 4,
     cars: 2,
     bq: true,
+    landSize: "218 sqm",
     summary:
       "Ìmísí, meaning inspiration, represents a home designed to inspire the way you live.",
     overview: [
