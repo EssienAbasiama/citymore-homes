@@ -70,7 +70,10 @@ export default function ProjectDetailPage({ params }) {
     project.landSize
       ? { icon: Ruler, label: "Land size", value: project.landSize }
       : { icon: Calendar, label: "Year", value: project.year },
-    { icon: Clock, label: "Duration", value: project.duration },
+    // Off-plan projects lead with when they hand over, not how long they take.
+    project.completion
+      ? { icon: Clock, label: "Completion", value: project.completion }
+      : { icon: Clock, label: "Duration", value: project.duration },
   ];
 
   const galleryItems = (project.gallery || []).map((src) =>

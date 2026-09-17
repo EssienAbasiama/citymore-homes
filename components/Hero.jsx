@@ -19,7 +19,10 @@ export default function Hero() {
   const overlayOpacity = useTransform(scrollYProgress, [0, 1], [0.35, 0.7]);
 
   return (
-    <section ref={ref} className="relative min-h-[100svh] overflow-hidden bg-ink">
+    <section
+      ref={ref}
+      className="relative min-h-[100svh] overflow-hidden bg-ink"
+    >
       {/* Parallax image */}
       <motion.div style={{ y: imgY }} className="absolute inset-0 scale-110">
         <Image
@@ -31,7 +34,10 @@ export default function Hero() {
           className="object-cover"
         />
       </motion.div>
-      <motion.div style={{ opacity: overlayOpacity }} className="absolute inset-0 bg-ink" />
+      <motion.div
+        style={{ opacity: overlayOpacity }}
+        className="absolute inset-0 bg-ink"
+      />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-ink/40" />
 
       {/* Content */}
@@ -42,7 +48,12 @@ export default function Hero() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="mb-8"
         >
-          <Roofline color="#EBE6D4" className="h-20 w-52" strokeWidth={2.2} once={false} />
+          <Roofline
+            color="#EBE6D4"
+            className="h-20 w-52"
+            strokeWidth={2.2}
+            once={false}
+          />
         </motion.div>
 
         <motion.p
@@ -66,9 +77,9 @@ export default function Hero() {
           transition={{ delay: 0.9, duration: 0.8 }}
           className="mt-8 max-w-xl text-lg leading-relaxed text-bone/75"
         >
-          We acquire, design, and transform properties into exceptional homes —
-          and partner with investors who want to build real value, with taste and
-          a deep respect for the places people live.
+          We acquire and develop properties with a focus on exceptional design,
+          timeless quality and lasting value — while partnering with investors
+          who share our taste and respect for places people call home.
         </motion.p>
 
         <motion.div
@@ -97,9 +108,18 @@ export default function Hero() {
           transition={{ delay: 1.3, duration: 0.8 }}
           className="mt-12 grid max-w-2xl grid-cols-3 gap-x-4 gap-y-6 border-t border-bone/15 pt-6 sm:mt-16 sm:gap-x-6 sm:pt-8"
         >
-          <Stat value={<Counter to={5} suffix="+" />} label="Years developing" />
-          <Stat value={<Counter to={6} suffix="" />} label="Homes transformed" />
-          <Stat value={<Counter to={1} suffix="" />} label="City of operation" />
+          <Stat
+            value={<Counter to={5} suffix="+" />}
+            label="Years developing"
+          />
+          <Stat
+            value={<Counter to={6} suffix="" />}
+            label="Homes transformed"
+          />
+          <Stat
+            value={<Counter to={1} suffix="" />}
+            label="City of operation"
+          />
         </motion.div>
       </div>
 

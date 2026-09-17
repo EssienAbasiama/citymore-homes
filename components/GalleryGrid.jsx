@@ -90,7 +90,12 @@ export default function GalleryGrid({ items = [], variant = "photos" }) {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: (i % 2) * 0.08, ease: [0.22, 1, 0.36, 1] }}
               className={`group relative block overflow-hidden rounded-2xl bg-bone-dark ${
-                i % 3 === 0 ? "aspect-[16/10] sm:col-span-2" : "aspect-[4/3]"
+                // The full-width feature slot only earns its place in a longer
+                // set; with two images it would leave a lone half-width orphan,
+                // so a short gallery just sits side by side.
+                items.length > 2 && i % 3 === 0
+                  ? "aspect-[16/10] sm:col-span-2"
+                  : "aspect-[4/3]"
               }`}
             >
               <Image
