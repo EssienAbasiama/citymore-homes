@@ -151,7 +151,6 @@ export const projects = [
       "/projects/terra/IMG_8335.png",
     ],
     plans: [
-      { src: "/projects/terra/IMG_0919.png", caption: "Upper Floor" },
       { src: "/projects/terra/IMG_8338.png", caption: "Front Elevation" },
       { src: "/projects/terra/IMG_8344.png", caption: "Back Elevation" },
       { src: "/projects/terra/IMG_8342.png", caption: "Left Elevation" },
