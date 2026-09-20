@@ -43,7 +43,17 @@ export default function FeaturedProjects() {
           </Reveal>
         </div>
 
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
+        {/* Size the columns to however many projects there are, so the row
+            always spans the full width instead of leaving empty slots. */}
+        <div
+          className={`mt-14 grid gap-8 sm:grid-cols-2 ${
+            featured.length >= 4
+              ? "xl:grid-cols-4"
+              : featured.length === 3
+                ? "lg:grid-cols-3"
+                : ""
+          }`}
+        >
           {featured.map((p, i) => (
             <ProjectCard key={p.slug} project={p} index={i} />
           ))}
