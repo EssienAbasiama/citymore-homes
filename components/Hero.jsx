@@ -41,16 +41,16 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-ink/40" />
 
       {/* Content */}
-      <div className="container-site relative flex min-h-[100svh] flex-col justify-end pb-20 pt-36 text-bone">
+      <div className="container-site relative flex min-h-[100svh] flex-col justify-end pb-14 pt-28 text-bone sm:pb-20 sm:pt-36">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="mb-8"
+          className="mb-5 sm:mb-8"
         >
           <Roofline
             color="#EBE6D4"
-            className="h-20 w-52"
+            className="h-14 w-40 sm:h-20 sm:w-52"
             strokeWidth={2.2}
             once={false}
           />
@@ -60,22 +60,22 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="eyebrow mb-6 text-taupe"
+          className="eyebrow mb-4 text-taupe sm:mb-6"
         >
           CITYMORE HOMES LIMITED
         </motion.p>
 
         <h1 className="max-w-4xl font-display text-5xl leading-[0.98] sm:text-6xl md:text-7xl lg:text-[5.5rem]">
-          <RevealText text="Refined living," />
+          <RevealText text="Refined living," onMount />
           <br />
-          <RevealText text="built from the ground up." delay={0.25} />
+          <RevealText text="built from the ground up." delay={0.25} onMount />
         </h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.8 }}
-          className="mt-8 max-w-xl text-lg leading-relaxed text-bone/75"
+          className="mt-5 max-w-xl text-base leading-relaxed text-bone/75 sm:mt-8 sm:text-lg"
         >
           We acquire and develop properties with a focus on exceptional design,
           timeless quality and lasting value — while partnering with investors
@@ -86,7 +86,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.05, duration: 0.8 }}
-          className="mt-10 flex flex-wrap items-center gap-4"
+          className="mt-7 flex flex-wrap items-center gap-3 sm:mt-10 sm:gap-4"
         >
           <Link href="/projects" className="btn-light">
             View projects
@@ -106,7 +106,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.3, duration: 0.8 }}
-          className="mt-12 grid max-w-2xl grid-cols-3 gap-x-4 gap-y-6 border-t border-bone/15 pt-6 sm:mt-16 sm:gap-x-6 sm:pt-8"
+          className="mt-8 grid max-w-2xl grid-cols-3 gap-x-4 gap-y-5 border-t border-bone/15 pt-5 sm:mt-16 sm:gap-x-6 sm:pt-8"
         >
           <Stat
             value={<Counter to={5} suffix="+" />}

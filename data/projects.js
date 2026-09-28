@@ -125,27 +125,28 @@ export const projects = [
       { icon: "ChefHat", title: "Fully fitted kitchen", body: "Gas hob, oven, and sleek cabinetry." },
       { icon: "Car", title: "Dedicated carport", body: "Durable flooring with easy access." },
     ],
-    videos: [
-      {
-        orientation: "portrait",
-        poster: "/projects/terra/walkthrough-1-poster.jpg",
-        sources: [
-          {
-            src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/terra-walkthrough-1.mp4",
-            type: "video/mp4",
-          },
-        ],
-      },
-      {
-        poster: "/projects/terra/walkthrough-2-poster.jpg",
-        sources: [
-          {
-            src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/terra-walkthrough-2.mp4",
-            type: "video/mp4",
-          },
-        ],
-      },
-    ],
+    // Walkthrough videos hidden for now — uncomment to bring them back.
+    // videos: [
+    //   {
+    //     orientation: "portrait",
+    //     poster: "/projects/terra/walkthrough-1-poster.jpg",
+    //     sources: [
+    //       {
+    //         src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/terra-walkthrough-1.mp4",
+    //         type: "video/mp4",
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     poster: "/projects/terra/walkthrough-2-poster.jpg",
+    //     sources: [
+    //       {
+    //         src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/terra-walkthrough-2.mp4",
+    //         type: "video/mp4",
+    //       },
+    //     ],
+    //   },
+    // ],
     gallery: [
       "/projects/terra/terra-1173.jpg",
       "/projects/terra/IMG_8335.png",
@@ -170,7 +171,7 @@ export const projects = [
     duration: "8 months",
     completion: "Feb – Mar 2027",
     featured: true,
-    cover: "/projects/the-triad/the-triad-1.jpeg",
+    cover: "/projects/the-triad/the-triad-2.jpeg",
     beds: 4,
     baths: 4,
     cars: 3,

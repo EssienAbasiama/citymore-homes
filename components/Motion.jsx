@@ -27,8 +27,13 @@ export function Reveal({
 }
 
 /* Headline that reveals word-by-word */
-export function RevealText({ text, className = "", delay = 0 }) {
+export function RevealText({ text, className = "", delay = 0, onMount = false }) {
   const words = text.split(" ");
+  // Above the fold there is nothing to scroll into view, so a
+  // whileInView reveal can leave the words parked out of frame.
+  const reveal = onMount
+    ? { animate: { y: "0%" } }
+    : { whileInView: { y: "0%" }, viewport: { once: true, amount: 0.4 } };
   return (
     <span className={className} aria-label={text}>
       {words.map((word, i) => (
@@ -36,8 +41,7 @@ export function RevealText({ text, className = "", delay = 0 }) {
           <motion.span
             className="inline-block"
             initial={{ y: "110%" }}
-            whileInView={{ y: "0%" }}
-            viewport={{ once: true, amount: 0.4 }}
+            {...reveal}
             transition={{
               duration: 0.9,
               delay: delay + i * 0.07,
