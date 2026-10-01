@@ -29,7 +29,7 @@ export const projects = [
     status: "Sold",
     type: "Detached Duplex",
     year: "2025",
-    duration: "7 months",
+    duration: "6 months",
     featured: true,
     cover: "/projects/the-nova/IMG_8334.png",
     beds: 5,
@@ -38,7 +38,7 @@ export const projects = [
     summary:
       "A four-bedroom detached duplex with a BQ in Ogba, finished to a turnkey smart-home standard — solar-ready power, full CCTV and smart access, and a fully fitted kitchen.",
     overview: [
-      "The Nova is a four-bedroom detached duplex with a BQ, completed in Ogba in just 7 months.",
+      "The Nova is a four-bedroom detached duplex with a BQ, completed in Ogba in just 6 months.",
       "Designed for modern living, it features a solar-ready power system with a 10.2kVA inverter and 15kWh lithium battery, an automated swing gate with remote access, a fully fitted kitchen, 24/7 CCTV surveillance, an integrated Bluetooth sound system, and smart fingerprint access. Every detail was thoughtfully crafted to a standard we'd be proud to call home ourselves.",
     ],
     scope: [
@@ -49,7 +49,7 @@ export const projects = [
     ],
     stats: [
       { label: "Bedrooms", value: "4 + BQ" },
-      { label: "Build time", value: "7 months" },
+      { label: "Build time", value: "6 months" },
       { label: "Power", value: "Solar-ready" },
       { label: "Status", value: "Sold" },
     ],
@@ -80,7 +80,7 @@ export const projects = [
     ],
     plans: [],
     result:
-      "Completed in seven months — a turnkey, smart-home duplex finished to a standard we're proud of.",
+      "Completed in six months — a turnkey, smart-home duplex finished to a standard we're proud of.",
   },
   {
     slug: "terra",
@@ -90,7 +90,7 @@ export const projects = [
     status: "Sold",
     type: "Detached Duplex",
     year: "2025",
-    duration: "7 months",
+    duration: "6 months",
     featured: true,
     cover: "/projects/terra/IMG_8335.png",
     beds: 5,
@@ -99,7 +99,7 @@ export const projects = [
     summary:
       "A four-bedroom detached duplex with a BQ in Ogba, finished to a turnkey smart-home standard — solar-ready power, full CCTV and smart access, and a fully fitted kitchen.",
     overview: [
-      "Terra Living is a four-bedroom detached duplex with a BQ, completed in Ogba in just 7 months.",
+      "Terra Living is a four-bedroom detached duplex with a BQ, completed in Ogba in just 6 months.",
       "Designed for modern living, it features a solar-ready power system with a 10.2kVA inverter and 15kWh lithium battery, an automated swing gate with remote access, a fully fitted kitchen, 24/7 CCTV surveillance, an integrated Bluetooth sound system, and smart fingerprint access. Every detail was thoughtfully crafted to a standard we'd be proud to call home ourselves.",
     ],
     scope: [
@@ -158,7 +158,7 @@ export const projects = [
       { src: "/projects/terra/IMG_8337.png", caption: "Right Elevation" },
     ],
     result:
-      "Delivered in seven months and sold — a turnkey, smart-home duplex finished to a move-in standard.",
+      "Delivered in six months and sold — a turnkey, smart-home duplex finished to a move-in standard.",
   },
   {
     slug: "the-triad",
