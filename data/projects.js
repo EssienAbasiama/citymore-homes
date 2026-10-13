@@ -61,16 +61,29 @@ export const projects = [
       { icon: "Speaker", title: "Integrated Bluetooth sound", body: "Wired into the living and common areas." },
       { icon: "ChefHat", title: "Fully fitted kitchen", body: "Gas hob, oven, and sleek cabinetry." },
     ],
-    video: {
-      orientation: "portrait",
-      poster: "/projects/the-nova/walkthrough-2-poster.jpg",
-      sources: [
-        {
-          src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/the-nova-walkthrough-2.mp4",
-          type: "video/mp4",
-        },
-      ],
-    },
+    videos: [
+      {
+        orientation: "portrait",
+        poster: "/projects/the-nova/walkthrough-2-poster.jpg",
+        sources: [
+          { src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/the-nova-walkthrough-2.mp4", type: "video/mp4" },
+        ],
+      },
+      {
+        orientation: "landscape",
+        poster: "/projects/aerial-tour-poster.jpg",
+        sources: [
+          { src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/citymore-aerial-tour.mp4", type: "video/mp4" },
+        ],
+      },
+      {
+        orientation: "portrait",
+        poster: "/projects/build-tour-poster.jpg",
+        sources: [
+          { src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/citymore-build-tour.mp4", type: "video/mp4" },
+        ],
+      },
+    ],
     gallery: [
       "/projects/the-nova/IMG_0961.PNG",
       "/projects/the-nova/IMG_0962.PNG",
@@ -124,6 +137,22 @@ export const projects = [
       { icon: "Wifi", title: "High-speed Starlink WiFi", body: "Includes a free six-month subscription." },
       { icon: "ChefHat", title: "Fully fitted kitchen", body: "Gas hob, oven, and sleek cabinetry." },
       { icon: "Car", title: "Dedicated carport", body: "Durable flooring with easy access." },
+    ],
+    videos: [
+      {
+        orientation: "landscape",
+        poster: "/projects/aerial-tour-poster.jpg",
+        sources: [
+          { src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/citymore-aerial-tour.mp4", type: "video/mp4" },
+        ],
+      },
+      {
+        orientation: "portrait",
+        poster: "/projects/build-tour-poster.jpg",
+        sources: [
+          { src: "https://github.com/EssienAbasiama/citymore-homes-media/releases/download/media-v1/citymore-build-tour.mp4", type: "video/mp4" },
+        ],
+      },
     ],
     // Walkthrough videos hidden for now — uncomment to bring them back.
     // videos: [
