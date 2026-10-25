@@ -206,12 +206,12 @@ export const projects = [
     cars: 3,
     bq: true,
     // Shown on the card between the name and the icon row.
-    cardSubtitle: ["TEMI | RẸ́MI | ÌMÍSÍ", "Mine. Comfort. Inspiration"],
+    cardSubtitle: ["TÈMI | RẸ́MÍ | ÌMÍSÍ", "Mine. Comfort. Inspiration"],
     children: ["temi", "remi", "imisi"],
     summary:
-      "Introducing The Triad — an exclusive collection of three beautifully crafted 4-bedroom detached duplexes with BQ, nestled within a serene estate. Featuring Smart Home Automation and Solar Powered living.\n\nTEMI | RẸ́MI | ÌMÍSÍ\nMine. Comfort. Inspiration",
+      "Introducing The Triad — an exclusive collection of three beautifully crafted 4-bedroom detached duplexes with BQ, nestled within a serene estate. Featuring Smart Home Automation and Solar Powered living.\n\nTÈMI | RẸ́MÍ | ÌMÍSÍ\nMine. Comfort. Inspiration",
     overview: [
-      "TEMI | RẸ́MI | ÌMÍSÍ",
+      "TÈMI | RẸ́MÍ | ÌMÍSÍ",
       "Mine. Comfort. Inspiration",
       "Each residence comes standard with 6.2kVA Solar Inverter + 10kWh Lithium Battery and Smart Home Automation — bringing modern, effortless living home.",
     ],
@@ -234,12 +234,12 @@ export const projects = [
     ],
     plans: [],
     result:
-      "TEMI | RẸ́MI | ÌMÍSÍ\nSpaces to call your own. Comfort to come home to. Inspiration to live by",
+      "TÈMI | RẸ́MÍ | ÌMÍSÍ\nSpaces to call your own. Comfort to come home to. Inspiration to live by",
   },
   {
     slug: "temi",
-    name: "TEMI",
-    tagline: "THE TRIAD — TEMI",
+    name: "TÈMI",
+    tagline: "THE TRIAD — TÈMI",
     location: "Ogba, Lagos, Nigeria",
     status: "Sold",
     type: "Residential Block",
@@ -255,9 +255,9 @@ export const projects = [
     bq: true,
     landSize: "248 sqm",
     summary:
-      "Temi, meaning “mine” or “belongs to me,” represents the feeling of finally coming home to something truly yours.",
+      "Tèmi, meaning “mine” or “belongs to me,” represents the feeling of finally coming home to something truly yours.",
     overview: [
-      "TEMI — “Mine”",
+      "TÈMI — “Mine”",
       "This exquisite 4-bedroom detached duplex with BQ combines contemporary elegance, spacious living and the tranquillity of a serene estate. Designed for those who value privacy, comfort and modern convenience.",
     ],
     scope: [
@@ -280,12 +280,12 @@ export const projects = [
       "/projects/temi/temi-4.jpeg",
     ],
     plans: [],
-    result: "TEMI — A home that feels truly yours.",
+    result: "TÈMI — A home that feels truly yours.",
   },
   {
     slug: "remi",
-    name: "RẸ́MI",
-    tagline: "THE TRIAD — RẸ́MI",
+    name: "RẸ́MÍ",
+    tagline: "THE TRIAD — RẸ́MÍ",
     location: "Ogba, Lagos, Nigeria",
     status: "Available",
     type: "Residential Block",
@@ -301,9 +301,9 @@ export const projects = [
     bq: true,
     landSize: "218 sqm",
     summary:
-      "Rẹ́mi, a name associated with comfort and ease. A residence created around effortless living.",
+      "Rẹ́mí, a name associated with comfort and ease. A residence created around effortless living.",
     overview: [
-      "RẸ́MI — “Comfort & Ease”",
+      "RẸ́MÍ — “Comfort & Ease”",
       "This elegant 4-bedroom detached duplex with BQ offers refined spaces, peaceful surroundings and thoughtful modern features — a home where comfort comes naturally.",
     ],
     scope: [
@@ -325,7 +325,7 @@ export const projects = [
       "/projects/remi/remi-3.jpeg",
     ],
     plans: [],
-    result: "RẸ́MI — A residence created around effortless living.",
+    result: "RẸ́MÍ — A residence created around effortless living.",
   },
   {
     slug: "imisi",
