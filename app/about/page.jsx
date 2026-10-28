@@ -34,8 +34,8 @@ const team = [
 ];
 
 const stats = [
-  { to: 5, suffix: "+", label: "Years developing" },
-  { to: 6, suffix: "", label: "Homes transformed" },
+  { to: 4, suffix: "+", label: "Years developing" },
+  { to: 5, suffix: "", label: "Homes transformed" },
   { to: 1, suffix: "", label: "City of operation" },
   { to: 98, suffix: "%", label: "Repeat partners" },
 ];
@@ -77,7 +77,7 @@ export default function AboutPage() {
                   develop down to the detail, and every partner by name.
                 </p>
                 <p>
-                  Five years on, that hasn't changed. We still take on fewer
+                  Four years on, that hasn't changed. We still take on fewer
                   projects than we could, because craft doesn't scale the way
                   listings do. The result is work people return to, and
                   recommend.

@@ -109,11 +109,11 @@ export default function Hero() {
           className="mt-8 grid max-w-2xl grid-cols-3 gap-x-4 gap-y-5 border-t border-bone/15 pt-5 sm:mt-16 sm:gap-x-6 sm:pt-8"
         >
           <Stat
-            value={<Counter to={5} suffix="+" />}
+            value={<Counter to={4} suffix="+" />}
             label="Years developing"
           />
           <Stat
-            value={<Counter to={6} suffix="" />}
+            value={<Counter to={5} suffix="" />}
             label="Homes transformed"
           />
           <Stat
