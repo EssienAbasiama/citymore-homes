@@ -79,7 +79,7 @@ export default function AboutPage() {
                 <p>
                   Four years on, that hasn't changed. We still take on fewer
                   projects than we could, because craft doesn't scale the way
-                  listings do. The result is work people return to, and
+                  listings do. The result is what people return to, and
                   recommend.
                 </p>
               </div>
